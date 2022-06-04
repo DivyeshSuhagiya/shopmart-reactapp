@@ -46,8 +46,8 @@ function HeaderTop() {
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
                                     <div className='ms-2'>
-                                        <NavLink to='/login'> <h6 className='m-0'>Login</h6></NavLink>
-                                        <h6 className='m-0'>Register</h6>
+                                        <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
+                                        <NavLink to='/register' className='text-dark'><h6 className='m-0'>Register</h6></NavLink>
                                         {/* <h6 className='m-0'>Account</h6> */}
                                     </div>
                                 </div>
@@ -90,8 +90,9 @@ function HeaderTop() {
                     <NavLink to='/page8'><p className='ps-3 m-0' onClick={handleClose}>Page 8</p></NavLink>
                     <NavLink to='/page9'><p className='ps-3 m-0' onClick={handleClose}>Page 9</p></NavLink>
                     <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}>
-                        <NavLink to='/login'><button className='border-1 px-3 py-1 '>Login</button></NavLink>
-                     <button className='px-2 py-1 border-1'>Register</button></p>
+                        <NavLink to='/login'><button className='border-1 px-3 py-1 ' onClick={handleClose}>Login</button></NavLink>
+                        <NavLink to='/register'><button className='px-2 py-1 border-1'>Register</button></NavLink>
+                    </p>
                 </Offcanvas.Body>
             </Offcanvas>
         </>

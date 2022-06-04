@@ -3,7 +3,7 @@
     height: 480px;
     margin: 0 auto;
     display: flex;
-
+    background-color: whitesmoke;
 }
 .login-img {
     height: 100%;
@@ -22,6 +22,7 @@
 }
 .login-form input {
     font-size: 14px;
+    border-radius: 0px;
   }
 .login-form input::placeholder {
     font-size: 14px;
