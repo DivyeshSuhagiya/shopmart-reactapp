@@ -1,0 +1,50 @@
+.login-main{
+    width: 800px;
+    height: 480px;
+    margin: 0 auto;
+    display: flex;
+
+}
+.login-img {
+    height: 100%;
+    width: 40%;
+    background-image: url('../../assets/images/login.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.login-form{
+    width: 60%;
+    
+}
+.login-form label{
+    font-weight: 500;
+    font-size: 14px;
+}
+.login-form input {
+    font-size: 14px;
+  }
+.login-form input::placeholder {
+    font-size: 14px;
+  }
+.login-form input:focus,input:hover{
+    box-shadow: none;
+    border: 1px solid var(---main-bg);
+}
+@media screen and (max-width: 900px) {
+    .login-main{
+        width: 100%;
+        height: 450px;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .login-main{
+        width: 100%;
+        height: 450px;
+    }
+    .login-img {
+        display: none;
+    }
+    .login-form{
+        width: 100%;
+    }
+  }

@@ -11,6 +11,7 @@ function HeaderTop() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
     return (
         <>
             <div className='header-top px-3 py-1'>
@@ -45,7 +46,7 @@ function HeaderTop() {
                                 <div className='d-flex justify-content-between align-items-center'>
                                     <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
                                     <div className='ms-2'>
-                                        <h6 className='m-0'>Login</h6>
+                                        <NavLink to='/login'> <h6 className='m-0'>Login</h6></NavLink>
                                         <h6 className='m-0'>Register</h6>
                                         {/* <h6 className='m-0'>Account</h6> */}
                                     </div>
@@ -56,7 +57,7 @@ function HeaderTop() {
 
                     <div className='row p-0' style={{ backgroundColor: "#FCB800" }}>
                         <div className='col-10 d-block d-sm-none text-start p-0 m-0'>
-                            <form className='header-search'>
+                            <form className='header-search p-0 m-0'>
                                 <div class="search-group mb-3">
                                     <input type="text" placeholder="I'm a shopping for.." />
                                     <div class="search-group-append">
@@ -66,7 +67,7 @@ function HeaderTop() {
                                 </div>
                             </form>
                         </div>
-                        <div className='col-2 d-block d-sm-none text-end m-0'>
+                        <div className='col-2 d-block d-sm-none text-end m-0 p-0'>
                             <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
                         </div>
                     </div>
@@ -79,16 +80,18 @@ function HeaderTop() {
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='sidebar-menu p-0'>
-                    <NavLink exact to='/'><p className='ps-3 m-0'>Page 1</p></NavLink>
-                    <p className='ps-3 m-0'>Page 2</p>
-                    <p className='ps-3 m-0'>Page 3</p>
-                    <p className='ps-3 m-0'>Page 4</p>
-                    <p className='ps-3 m-0'>Page 5</p>
-                    <p className='ps-3 m-0'>Page 6</p>
-                    <p className='ps-3 m-0'>Page 7</p>
-                    <p className='ps-3 m-0'>Page 8</p>
-                    <p className='ps-3 m-0'>Page 9</p>
-                    <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}><button className='border-1 px-3 py-1 '>Login</button> <button className='px-2 py-1 border-1'>Register</button></p>
+                    <NavLink exact to='/'><p className='ps-3 m-0' onClick={handleClose}>Page 1</p></NavLink>
+                    <NavLink to='/page2'><p className='ps-3 m-0' onClick={handleClose}>Page 2</p></NavLink>
+                    <NavLink to='/page3'><p className='ps-3 m-0' onClick={handleClose}>Page 3</p></NavLink>
+                    <NavLink to='/page4'><p className='ps-3 m-0' onClick={handleClose}>Page 4</p></NavLink>
+                    <NavLink to='/page5'><p className='ps-3 m-0' onClick={handleClose}>Page 5</p></NavLink>
+                    <NavLink to='/page6'><p className='ps-3 m-0' onClick={handleClose}>Page 6</p></NavLink>
+                    <NavLink to='/page7'><p className='ps-3 m-0' onClick={handleClose}>Page 7</p></NavLink>
+                    <NavLink to='/page8'><p className='ps-3 m-0' onClick={handleClose}>Page 8</p></NavLink>
+                    <NavLink to='/page9'><p className='ps-3 m-0' onClick={handleClose}>Page 9</p></NavLink>
+                    <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}>
+                        <NavLink to='/login'><button className='border-1 px-3 py-1 '>Login</button></NavLink>
+                     <button className='px-2 py-1 border-1'>Register</button></p>
                 </Offcanvas.Body>
             </Offcanvas>
         </>
