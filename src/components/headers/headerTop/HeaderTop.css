@@ -1,0 +1,113 @@
+
+.header-top{
+    background-color: var(---main-bg);
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.header-top h1 { 
+    font-size: 30px;
+    margin: 0;
+    font-weight: 600;
+}
+.col{
+    padding: 0;
+    margin: 0;
+}
+.row{
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.header-top .search-group{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.header-top input{
+    width: 90%;
+    padding: 7px 15px;
+    border: none;   
+    font-size: 14px;
+}
+.header-top input:focus{
+    outline: none;
+}
+.header-top .search-group-append{
+    padding: 0px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgb(25, 25, 25);
+    color: var(--white-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 3px 3px 0px;
+}
+.header-top .icon {
+    position: relative;
+}
+.header-icon i , h6{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.header-icon h6:hover{
+    color: var(--white-color);
+}
+.header-icon span{
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    margin: 0;
+    width: 17px;
+    height: 17px;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 10px;
+    background-color: var(--black-color);
+}
+
+.sidebar-menu p{
+    padding: 9px 0px;
+    transition: 0.3s;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+.sidebar-menu p:hover{
+    background-color: var(---main-bg);
+}
+.sidebar-menu button{
+    border-radius: 3px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    transition: 0.3s;
+}
+.sidebar-menu button:hover{
+    background-color: transparent;
+    color: black;
+}
+
+@media screen and (max-width: 990px) {
+    .logo{
+      /* margin-top: 10px; */
+    }
+    .header-search{
+        float: left;
+        width: 100%;
+    }
+    .search-group {
+        justify-content: start !important;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .header-top{
+        padding: 13px !important;
+    }
+  }

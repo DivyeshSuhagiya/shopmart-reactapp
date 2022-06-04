@@ -1,0 +1,14 @@
+.contact-links p{
+    margin: 10px 0px;
+    padding: 0;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.contact-links p:hover{
+    margin: 10px 0px;
+    padding: 0;
+    font-size: 14px;
+    color: var(---main-bg);
+}

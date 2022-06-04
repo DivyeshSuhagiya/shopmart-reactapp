@@ -1,0 +1,9 @@
+.services_main{
+    border: 1px solid lightgray;
+}
+.services_main h5{
+    font-size: 18px;
+}
+.services_main p{
+    font-size: 14px;
+}

@@ -1,0 +1,9 @@
+.slider-menu p{
+    padding: 9px 0px;
+    transition: 0.3s;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+.slider-menu p:hover{
+    background-color: var(---main-bg);
+}

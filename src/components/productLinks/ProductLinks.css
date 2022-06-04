@@ -1,0 +1,15 @@
+.product-link{
+    margin: 10px 0px;
+}
+.product-link span{
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+    border-right: 1px solid rgb(152, 152, 152);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.product-link span:hover{
+    color: var(---main-bg);
+}

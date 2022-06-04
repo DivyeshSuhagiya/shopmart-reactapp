@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(---main-bg);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:root{
+---main-bg : #FCB800;
+  --black-color : black;
+  --white-color : white;
+  --seconde-dark-bg : rgb(25, 25, 25);
+  --light-gray : rgb(245, 245, 245);
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: var(--black-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.border-1{
+  border: 1px solid lightgray;
+}
+.shopNow{
+    padding: 8px 20px;
+    border: none;
+    background-color: var(---main-bg);
+    font-weight: 600;
+}
+.btn_hover:hover{
+  background-color: #fd7b02 !important;
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+
+/* slider  */
+.sliderImage{
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+
+}
+.slide-text{
+    position: absolute;
+    transform: translate(15% , 100%);
+}
+
+
+/* product-card */
+.product-card{
+  border: none;
+}
+.product-card:hover{
+  outline: 1px solid lightgray;
+}
+.product-card:hover img{
+outline: 1px solid lightgray;
+transform: scale(0.9);
+outline: none;
+}
+.product-name{
+  color: rgb(27, 27, 221);
+  transition: 0.2s;
+}
+.product-name:hover{
+  color: var(---main-bg);
+}
+
+
+@media screen and (max-width: 990px) {
+  .mySlider .p-3{
+    padding: 0 !important;
+  }
+}

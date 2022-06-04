@@ -1,0 +1,29 @@
+
+.child{
+    bottom: 105%;
+    left: 100%;
+    transform: translate(0px , 0px);
+    transition: 0.3s;
+  }
+  .product-card:hover .child {
+    background-color: rgba(164, 164, 164, 0.1) !important;
+    transform: translateX(-100%)
+  }
+  .modal-body .btn-close {
+    padding: 0.5rem -0.5rem;
+    margin: -21.5rem 0.5rem 0.5rem auto;
+  }
+  .product-icon{
+    width: 28px;
+    height: 100%;
+    padding: 7px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .product-icon:hover{
+    background-color: #FCB800;
+    color: var(--white-color);
+  }
+  .sold{
+    font-size: 12px;
+  }

@@ -1,0 +1,9 @@
+.monthCate .border-1:hover{
+    border: 1px solid var(---main-bg);
+}
+img{
+    transition: 0.3s;
+}
+.monthCate:hover img {
+    transform: scale(0.9);
+}
