@@ -5,6 +5,7 @@ import HeaderBottom from './components/headers/headerBottom/HeaderBottom';
 import HeaderTop from './components/headers/headerTop/HeaderTop';
 import Page1 from './pages/Page1/Page1'
 import Login from './pages/login/Login'
+import Register from './pages/register/Register';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/page9'></Route>
         <Route path='/page10'></Route>
         <Route path='/login'><Login /></Route>
+        <Route path='/register'><Register /></Route>
       </BrowserRouter>
       </div>
     </>

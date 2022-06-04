@@ -1,53 +1,56 @@
-.login-main{
-    width: 800px;
-    height: 460px;
+.register-main{
+    width: 1000px;
+    height: 600px;
     margin: 0 auto;
     display: flex;
     background-color: whitesmoke;
 }
-.login-img {
+.register-img {
     height: 100%;
     width: 40%;
     background-color: white;
-    background-image: url('../../assets/images/login2.png') ;
+    background-image: url('../../assets/images/office.jpg') ;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 20%;
+    background-position: 23%;
 }
-.login-form{
+.register-form{
     width: 60%;
     
 }
-.login-form label{
+.register-form label{
     font-weight: 500;
     font-size: 14px;
 }
-.login-form input {
+.register-form input {
     font-size: 14px;
     border-radius: 10px;
   }
-.login-form input::placeholder {
+.register-form input::placeholder {
     font-size: 14px;
   }
-.login-form input:focus,input:hover{
+.register-form input:focus,input:hover{
     box-shadow: none;
     border: 1px solid var(---main-bg);
 }
 @media screen and (max-width: 900px) {
-    .login-main{
+    .register-main{
         width: 100%;
-        height: 450px;
+        height: 600px;
+    }
+    .register-img {
+        background-position: 40%;
     }
   }
   @media screen and (max-width: 650px) {
-    .login-main{
+    .register-main{
         width: 100%;
-        height: 450px;
+        height: 600px;
     }
-    .login-img {
+    .register-img {
         display: none;
     }
-    .login-form{
+    .register-form{
         width: 100%;
     }
   }

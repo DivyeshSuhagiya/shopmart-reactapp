@@ -91,7 +91,7 @@ function HeaderTop() {
                     <NavLink to='/page9'><p className='ps-3 m-0' onClick={handleClose}>Page 9</p></NavLink>
                     <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}>
                         <NavLink to='/login'><button className='border-1 px-3 py-1 ' onClick={handleClose}>Login</button></NavLink>
-                        <NavLink to='/register'><button className='px-2 py-1 border-1'>Register</button></NavLink>
+                        <NavLink to='/register'><button className='px-2 py-1 border-1 ms-3' onClick={handleClose}>Register</button></NavLink>
                     </p>
                 </Offcanvas.Body>
             </Offcanvas>
