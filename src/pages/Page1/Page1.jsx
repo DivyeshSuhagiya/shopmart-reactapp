@@ -42,7 +42,7 @@ function Page1() {
             <div className='mySlider'>
                 <div className='row p-3'>
                     <div className='col-12 col-lg-3 p-0 d-none d-lg-block' >
-                            <SliderMenu />
+                        <SliderMenu />
                     </div>
                     <div className='col-12 col-lg-9 p-0'>
                         <Slider />
@@ -53,7 +53,8 @@ function Page1() {
 
             <Services />
 
-            <DealOfTheDay DealOfTheDay={<ProductComponent />} />
+            <DealOfTheDay DealOfTheDay={<ProductComponent/>} />
+            
 
             <Page1Offer />
 
@@ -78,7 +79,7 @@ function Page1() {
                 </div>
             </div>
 
-            <CustomerElectronic CustomerElectronic={<ProductComponent />} />
+            <CustomerElectronic CustomerElectronic={<ProductComponent images={cateImg1}/>} />
 
             <Clothing Clothing={<ProductComponent />} />
 

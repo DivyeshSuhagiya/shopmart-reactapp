@@ -15,7 +15,7 @@ import { Button } from 'react-bootstrap';
 import { BsEye } from "react-icons/bs"
 import { FaRegHeart, FaShopify } from 'react-icons/fa'
 
-function ProductComponent() {
+function ProductComponent(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -25,6 +25,19 @@ function ProductComponent() {
         setRating(rate)
     }
 
+    // var base64img = props.images;
+    // function Base64ToImage(base64img, callback) {
+    //   let img = new Image();
+    //   img.onload = function () {
+    //     callback(img);
+    //   };
+    //   img.src = base64img;
+    // }
+    // Base64ToImage(base64img, function (img) {
+    //     // document.getElementById('main').appendChild(img);
+    //   let log = "w=" + img.width + " h=" + img.height;
+    //   console.log(img);
+    // });
     return (
         <>
             <div>
@@ -41,7 +54,7 @@ function ProductComponent() {
                         <div>
                             <span className='pe-2 text-success fw-bold fs-6'>$670.2</span>
                             <span className='text-muted pe-2' style={{ fontWeight: "500", textDecoration: "line-through", fontSize: "14px" }}>$568.8</span>
-                            <span className='text-danger' style={{ fontSize: "16px" ,textOverflow: 'ellipsis' ,whiteSpace: 'nowrap' , overflow: 'hidden'}}>18% off</span>
+                            <span className='text-danger' style={{ fontSize: "16px", textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>18% off</span>
                         </div>
                         <div className='product-name mb-0 mt-3' style={{ fontSize: "14px" }}>
                             Korea Long Sofa Fabric In Blue Navy Color

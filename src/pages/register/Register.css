@@ -45,10 +45,12 @@
   @media screen and (max-width: 650px) {
     .register-main{
         width: 100%;
-        height: 600px;
+        height:1000px;
+        flex-direction: column-reverse;
     }
     .register-img {
-        display: none;
+        /* display: none; */
+        width: 100%;
     }
     .register-form{
         width: 100%;
