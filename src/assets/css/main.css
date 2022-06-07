@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
+  user-select: none;
 }
 a{
   text-decoration: none !important;
@@ -72,7 +73,9 @@ a{
   transition: 0.4s;
   transform: scale(1.1);
 }
-
+.cursor-pointer{
+  cursor: pointer;
+}
 /* slider  */
 .sliderImage{
     width: 100%;

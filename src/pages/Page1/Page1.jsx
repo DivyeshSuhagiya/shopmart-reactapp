@@ -53,7 +53,8 @@ function Page1() {
 
             <Services />
 
-            <DealOfTheDay DealOfTheDay={<ProductComponent/>} />
+            {/* <DealOfTheDay DealOfTheDay={<ProductComponent />} /> */}
+            <DealOfTheDay />
             
 
             <Page1Offer />

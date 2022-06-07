@@ -1,29 +1,84 @@
+.child {
+  bottom: 105%;
+  left: 100%;
+  transform: translate(0px, 0px);
+  transition: 0.3s;
+}
 
-.child{
-    bottom: 105%;
-    left: 100%;
-    transform: translate(0px , 0px);
-    transition: 0.3s;
-  }
-  .product-card:hover .child {
+.product-card:hover .child {
+  background-color: rgba(164, 164, 164, 0.1) !important;
+  transform: translateX(-100%)
+}
+
+.modal-body .btn-close {
+  padding: 0.5rem -0.5rem;
+  margin: -21.5rem 0.5rem 0.5rem auto;
+}
+
+.product-icon {
+  width: 28px;
+  height: 100%;
+  padding: 7px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.product-icon:hover {
+  background-color: #FCB800;
+  color: var(--white-color);
+}
+
+.sold {
+  font-size: 12px;
+}
+.product-modal h2{
+  font-weight: 400;
+}
+.product-modal p{
+  color: rgb(99, 99, 99);
+  font-size: 14px;
+}
+.product-modal span{
+  font-weight: 500;
+}
+.product-add-btn{
+  padding: 9px 25px;
+  border: 0;
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.product-add-btn:hover{
+  transform: scale(1.05);
+  background-color: var(---main-bg);
+  color: black;
+  font-weight: 500;
+}
+.product-shopnow-btn{
+  background-color: var(---main-bg);
+  border: none;
+  padding: 12px 0px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.product-shopnow-btn:hover{
+  background-color: var(--seconde-dark-bg);
+  color: white;
+}
+@media screen and (max-width : 800px) {
+  .child {
+    bottom: 103%;
     background-color: rgba(164, 164, 164, 0.1) !important;
-    transform: translateX(-100%)
+    transform: translateX(-100%) !important;
+    height: 25px !important;
+    padding: 0 !important;
   }
-  .modal-body .btn-close {
-    padding: 0.5rem -0.5rem;
-    margin: -21.5rem 0.5rem 0.5rem auto;
-  }
-  .product-icon{
-    width: 28px;
+
+  .product-icon {
+    width: 25px;
     height: 100%;
-    padding: 7px;
-    border-radius: 50%;
     transition: 0.3s;
   }
-  .product-icon:hover{
-    background-color: #FCB800;
-    color: var(--white-color);
-  }
-  .sold{
-    font-size: 12px;
-  }
+}
+

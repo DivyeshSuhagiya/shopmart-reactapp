@@ -23,7 +23,8 @@ function DealOfTheDay(props) {
       <div className='py-5 px-3'>
         <h4>Deal of the day</h4>
         <hr />
-        <Testimonial DealOfTheDay={props.DealOfTheDay} cmp={<ProductComponent images={props.aa} />} />
+        {/* <Testimonial DealOfTheDay={props.DealOfTheDay} /> */}
+        <Testimonial />
       </div>
     </>
   )
