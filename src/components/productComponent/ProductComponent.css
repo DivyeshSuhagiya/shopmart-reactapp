@@ -66,6 +66,7 @@
   background-color: var(--seconde-dark-bg);
   color: white;
 }
+
 @media screen and (max-width : 800px) {
   .child {
     bottom: 103%;

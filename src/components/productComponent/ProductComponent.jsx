@@ -68,7 +68,7 @@ function ProductComponent(props) {
                 </Card>
 
 
-                <Modal show={show} size="fullscreen" onHide={handleClose} >
+                <Modal show={show} size="xl" onHide={handleClose} className="p-0" >
                     <Modal.Header closeButton className='border-0'>
                         <h4>Quickview</h4>
                     </Modal.Header>
