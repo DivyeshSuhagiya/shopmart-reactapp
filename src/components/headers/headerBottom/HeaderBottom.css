@@ -14,7 +14,7 @@
 
 .header-bottom span {
     border-right:  1px solid black;
-    padding: 0 20px;
+    padding: 0 13px;
     white-space: nowrap;
     font-size: 15px;
 }
@@ -28,6 +28,12 @@
 @media screen and (max-width: 1200px) {
     .sell{
         display: none;
+    }
+    .header-bottom .col-lg-7{
+        width: 750px;
+    }
+    .header-bottom .col-lg-2{
+        width: 200px;
     }
   }
 

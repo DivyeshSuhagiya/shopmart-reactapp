@@ -43,7 +43,7 @@ function HeaderTop() {
                                 <div>
                                     <i class='bx bx-notepad bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Feedback"></i>
                                 </div>
-                                <div className='d-flex justify-content-between align-items-center'>
+                                <div className='acount-icon d-flex justify-content-between align-items-center'>
                                     <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
                                     <div className='ms-2'>
                                         <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
@@ -80,15 +80,16 @@ function HeaderTop() {
                     <Offcanvas.Title>Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className='sidebar-menu p-0'>
-                    <NavLink exact to='/'><p className='ps-3 m-0' onClick={handleClose}>Page 1</p></NavLink>
-                    <NavLink to='/page2'><p className='ps-3 m-0' onClick={handleClose}>Page 2</p></NavLink>
-                    <NavLink to='/page3'><p className='ps-3 m-0' onClick={handleClose}>Page 3</p></NavLink>
-                    <NavLink to='/page4'><p className='ps-3 m-0' onClick={handleClose}>Page 4</p></NavLink>
-                    <NavLink to='/page5'><p className='ps-3 m-0' onClick={handleClose}>Page 5</p></NavLink>
-                    <NavLink to='/page6'><p className='ps-3 m-0' onClick={handleClose}>Page 6</p></NavLink>
-                    <NavLink to='/page7'><p className='ps-3 m-0' onClick={handleClose}>Page 7</p></NavLink>
-                    <NavLink to='/page8'><p className='ps-3 m-0' onClick={handleClose}>Page 8</p></NavLink>
-                    <NavLink to='/page9'><p className='ps-3 m-0' onClick={handleClose}>Page 9</p></NavLink>
+                    <NavLink exact to='/'><p className='ps-3 m-0' onClick={handleClose}>Home</p></NavLink>
+                    <NavLink to='/Electronics'><p className='ps-3 m-0' onClick={handleClose}>Electronics</p></NavLink>
+                    <NavLink to='/Mobiles'><p className='ps-3 m-0' onClick={handleClose}>Mobiles</p></NavLink>
+                    <NavLink to='/Jewelry'><p className='ps-3 m-0' onClick={handleClose}>Jewelry</p></NavLink>
+                    <NavLink to='/Cloth'><p className='ps-3 m-0' onClick={handleClose}>Cloth</p></NavLink>
+                    <NavLink to='/Kitchen'><p className='ps-3 m-0' onClick={handleClose}>Kitchen</p></NavLink>
+                    <NavLink to='/Watches'><p className='ps-3 m-0' onClick={handleClose}>Watches</p></NavLink>
+                    <NavLink to='/Shoes'><p className='ps-3 m-0' onClick={handleClose}>Shoes</p></NavLink>
+                    <NavLink to='/About'><p className='ps-3 m-0' onClick={handleClose}>About</p></NavLink>
+                    <NavLink to='/Contact'><p className='ps-3 m-0' onClick={handleClose}>Contact</p></NavLink>
                     <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}>
                         <NavLink to='/login'><button className='border-1 px-3 py-1 ' onClick={handleClose}>Login</button></NavLink>
                         <NavLink to='/register'><button className='px-2 py-1 border-1 ms-3' onClick={handleClose}>Register</button></NavLink>

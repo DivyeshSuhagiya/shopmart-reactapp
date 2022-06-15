@@ -3,6 +3,10 @@
     transition: 0.3s;
     border-bottom: 1px solid lightgray;
     cursor: pointer;
+    font-weight: 400;
+}
+.slider-menu a{
+    color: black;
 }
 .slider-menu p:hover{
     background-color: var(---main-bg);

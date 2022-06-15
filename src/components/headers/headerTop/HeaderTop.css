@@ -99,7 +99,9 @@
     background-color: transparent;
     color: black;
 }
-
+.acount-icon .active{
+    color: white !important;
+}
 
 
 @media screen and (max-width: 990px) {

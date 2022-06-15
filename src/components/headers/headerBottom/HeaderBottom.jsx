@@ -12,21 +12,21 @@ function HeaderBottom() {
                         <i className='bx bx-menu-alt-right bx-sm' style={{cursor : "pointer"}}></i>
                         <h6 className='d-inline-block ms-2 mt-1 hover-underline-animation overflow-hidden' style={{whiteSpace:"nowrap" ,textOverflow: 'ellipsis'}}>Shop by Department</h6>
                     </div>
-                    <div className='col-8 col-lg-6'>
+                    <div className='col-8 col-lg-7' >
                         <ul className='d-flex my-0 list-unstyled justify-content-between align-items-center'>
-                            <NavLink exact to='/'><li>page1</li></NavLink>
-                            <NavLink to='/page2'><li>page2</li></NavLink>
-                            <NavLink to='/page3'><li>page3</li></NavLink>
-                            <NavLink to='/page4'><li>page4</li></NavLink>
-                            <NavLink to='/page5'><li>page5</li></NavLink>
-                            <NavLink to='/page6'><li>page6</li></NavLink>
-                            <NavLink to='/page7'><li>page7</li></NavLink>
-                            <NavLink to='/page8'><li>page8</li></NavLink>
-                            <NavLink to='/page9'><li>page9</li></NavLink>
-                            <NavLink to='/page10'><li>page10</li></NavLink> 
+                            <NavLink exact to='/'><li>Home</li></NavLink>
+                            <NavLink to='/Electronics'><li>Electronics</li></NavLink>
+                            <NavLink to='/Mobiles'><li>Mobiles</li></NavLink>
+                            <NavLink to='/Jewelry'><li>Jewelry</li></NavLink>
+                            <NavLink to='/Cloth'><li>Cloth</li></NavLink>
+                            <NavLink to='/Kitchen'><li>Kitchen</li></NavLink>
+                            <NavLink to='/Watches'><li>Watches</li></NavLink>
+                            <NavLink to='/Shoes'><li>Shoes</li></NavLink>
+                            <NavLink to='/About'><li>About</li></NavLink>
+                            <NavLink to='/Contact'><li>Contact</li></NavLink> 
                         </ul>
                     </div>
-                    <div className='sell col-lg-4'>
+                    <div className='sell col-lg-3'>
                             <div className='d-flex justify-content-end'>
                                 <span>Sell on Shopmart</span>
                                 <span>Tract your order</span>

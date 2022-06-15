@@ -20,12 +20,15 @@ import Testimonial from '../../components/testimonial/Testimonial'
 import DealOfTheDay from '../../components/dealOfTheDay/DealOfTheDay'
 import CustomerElectronic from '../../components/cutomerElectronic/CustomerElectronic'
 import Clothing from '../../components/clothing/Clothing'
-import Kitchen from '../../components/kitchen/Kitchen'
 import HotNew from '../../components/hotNew/HotNew'
 import NewSletter from '../../components/newSletter/NewSletter'
 import ContactLinks from '../../components/contactLinks/ContactLinks'
 import ProductLinks from '../../components/productLinks/ProductLinks'
 import Footer from '../../components/footer/Footer'
+import slide1 from '../../assets/images/slide-1.jpg'
+import slide2 from '../../assets/images/slide-2.jpg'
+import slide3 from '../../assets/images/slide-3.jpg'
+import HomeKitchen from '../../components/home kithcen/HomeKitchen'
 function Page1() {
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
@@ -37,15 +40,30 @@ function Page1() {
         { image: cateImg7, name: "Jewelry & watch" },
         { image: cateImg8, name: "Mobiles" }
     ]
+
+    const slideImages = [
+        {
+          url: slide1,
+          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+        },
+        {
+          url: slide2,
+          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+        },
+        {
+          url: slide3,
+          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+        },
+      ];
     return (
         <>
             <div className='mySlider'>
                 <div className='row p-3'>
                     <div className='col-12 col-lg-3 p-0 d-none d-lg-block' >
-                        <SliderMenu />
+                        <SliderMenu/>
                     </div>
                     <div className='col-12 col-lg-9 p-0'>
-                        <Slider />
+                        <Slider slideImages={slideImages}/>
                     </div>
                 </div>
             </div>
@@ -84,7 +102,7 @@ function Page1() {
 
             <Clothing Clothing={<ProductComponent />} />
 
-            <Kitchen Kitchen={<ProductComponent />} />
+            <HomeKitchen Kitchen={<ProductComponent />} />
 
 
             <div className='p-3'>

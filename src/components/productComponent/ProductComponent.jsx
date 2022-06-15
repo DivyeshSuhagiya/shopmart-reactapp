@@ -52,11 +52,11 @@ function ProductComponent(props) {
                         </div>
                         <Card.Title style={{ fontSize: "14px" }}>YOUNG SHOP</Card.Title><hr />
                         <div>
-                            <span className='pe-2 text-success fw-bold fs-6'>$670.2</span>
-                            <span className='text-muted pe-2' style={{ fontWeight: "500", textDecoration: "line-through", fontSize: "14px" }}>$568.8</span>
-                            <span className='text-danger' style={{ fontSize: "16px", textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>18% off</span>
+                            <span className='price pe-2 text-success fw-bold fs-6'>$670.2</span>
+                            <span className='old-price text-muted pe-2' >$568.8</span>
+                            <span className='discount text-danger' >18% off</span>
                         </div>
-                        <div className='product-name mb-0 mt-3' style={{ fontSize: "14px" }}>
+                        <div className='product-name mb-0 mt-3' style={{overflow: "hidden" , fontSize: "14px", whiteSpace:"nowrap",textOverflow: "ellipsis" }}>
                             Korea Long Sofa Fabric In Blue Navy Color
                         </div>
                         <Rating onClick={handleRating} className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={rating} />

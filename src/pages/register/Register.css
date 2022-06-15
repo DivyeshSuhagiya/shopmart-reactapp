@@ -33,6 +33,18 @@
     box-shadow: none;
     border: 1px solid var(---main-bg);
 }
+.otp{
+    width: 450px;
+}
+.otp input{
+    font-size: 14px;
+    border-radius: 10px;
+}
+.otp input:focus,input:hover{
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(---main-bg);
+}
 @media screen and (max-width: 900px) {
     .register-main{
         width: 100%;
@@ -53,6 +65,12 @@
         width: 100%;
     }
     .register-form{
+        width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .otp{
         width: 100%;
     }
   }

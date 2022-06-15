@@ -42,6 +42,14 @@ function Register() {
                         </div>
                     </div>
                 </div>
+                <div className='otp shadow m-auto p-3 mt-4'>
+                    <h4>OTP</h4>
+                    <hr />
+                    <form action="">
+                        <input type="text" className='border-1 py-1 px-2 w-100' placeholder='Enter OTP code' />
+                        <button className='mt-3 shopNow py-1 btn_hover'>Confirm</button>
+                    </form>
+                </div>
             </div>
         </>
     )
