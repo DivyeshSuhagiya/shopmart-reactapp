@@ -20,9 +20,9 @@ function Account() {
     return (
         <>
             <div className='account mt-2 mb-5'>
-                <div className='svg'>
+                {/* <div className='svg'>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,224L120,213.3C240,203,480,181,720,197.3C960,213,1200,267,1320,293.3L1440,320L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
-                </div>
+                </div> */}
                 <div className='pb-5 mt-3'>
                     <div className='container'>
                         <div className='row'>
