@@ -52,7 +52,7 @@ export const fetchuserLogin= (value) => {
         axios.post("https://node-app-demo-first.herokuapp.com/api/user/login" , value).then(response => {
             const user = response.data.userInfo
             dispatch(userSuccess(user))
-            document.cookie = `userId=${user._id};path=/;domain=shopmart-reactapp.herokuapp.com`;
+            document.cookie = `userId=${user._id};path=/`;
         }).catch(error => {
             dispatch(userFailure(error.massage))
         })
