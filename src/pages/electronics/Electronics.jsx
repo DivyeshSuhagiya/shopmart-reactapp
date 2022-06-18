@@ -22,12 +22,7 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Electronics() {
-    const arr = useSelector(state => state.product)
-    const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(fetchProduct())
-    }, [])
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -55,7 +50,6 @@ function Electronics() {
     ];
     return (
         <>
-        {console.log(arr)}
             <Slider slideImages={slideImages} />
             <div className='same-product-page py-5 px-3'>
                 <div className='row align-items-start'>

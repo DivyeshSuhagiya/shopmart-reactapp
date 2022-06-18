@@ -22,12 +22,12 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Mobiles() {
-    const arr = useSelector(state => state)
-    const dispatch = useDispatch()
+    // const arr = useSelector(state => state.product.product)
+    // const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(fetchProduct())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(fetchProduct())
+    // }, [])
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -53,6 +53,9 @@ function Mobiles() {
             caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
         },
     ];
+
+    
+
     return (
         <>
             <Slider slideImages={slideImages} />
@@ -84,17 +87,6 @@ function Mobiles() {
             <ProductLinks />
             <Footer />
 
-            <div>
-                <table>
-                   {/* {
-                    arr.map(x=> {
-                        return(
-                            <tr>{x.productImage}</tr>
-                        )
-                    })
-                   } */}
-                </table>
-            </div>
         </>
     )
 }

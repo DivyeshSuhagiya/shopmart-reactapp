@@ -7,15 +7,16 @@ let config = {
 }
 // let config_header = {
 //     headers: {
-//         'content-type': 'multipart/form-data'
+//         "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
 //     }
 // }
 
 export const fetchProduct = () => {
     return (dispatch) => {
         dispatch(productRequest());
-        axios.get("https://node-app-demo-first.herokuapp.com/api/product/get" , config).then(response => {
-            const product = response.data
+        axios.get("https://node-app-demo-first.herokuapp.com/api/product/get").then(response => {
+            const product = response.data.data
             dispatch(productSuccess(product))
         }).catch(error => {
             dispatch(productFailure(error.massage))

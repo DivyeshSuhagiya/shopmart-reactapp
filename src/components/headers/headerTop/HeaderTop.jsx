@@ -3,9 +3,11 @@ import './HeaderTop.css'
 import { BiMenu } from "react-icons/bi";
 import { Offcanvas } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 
 
 function HeaderTop() {
+    const [cookies, setCookie] = useCookies(["userId"]);
 
     const [show, setShow] = useState(false);
 
@@ -44,12 +46,18 @@ function HeaderTop() {
                                     <i class='bx bx-notepad bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Feedback"></i>
                                 </div>
                                 <div className='acount-icon d-flex justify-content-between align-items-center'>
-                                    <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
-                                    <div className='ms-2'>
-                                        <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
-                                        <NavLink to='/register' className='text-dark'><h6 className='m-0'>Register</h6></NavLink>
-                                        {/* <h6 className='m-0'>Account</h6> */}
-                                    </div>
+                                    <NavLink to="/account"><i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
+                                    {
+                                        cookies && cookies === "false"? 
+                                        
+                                            <div className='login-register  ms-2'>
+                                                <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
+                                                <NavLink to='/register' className='text-dark'><h6 className='m-0'>Register</h6></NavLink>
+                                                {/* <h6 className='m-0'>Account</h6> */}
+                                            </div> : 
+                                            <></>
+                                    }
+
                                 </div>
                             </div>
                         </div>
@@ -90,7 +98,7 @@ function HeaderTop() {
                     <NavLink to='/Shoes'><p className='ps-3 m-0' onClick={handleClose}>Shoes</p></NavLink>
                     <NavLink to='/About'><p className='ps-3 m-0' onClick={handleClose}>About</p></NavLink>
                     <NavLink to='/Contact'><p className='ps-3 m-0' onClick={handleClose}>Contact</p></NavLink>
-                    <p className='ps-3 m-0' style={{cursor : "context-menu" , backgroundColor: "transparent"}}>
+                    <p className='ps-3 m-0' style={{ cursor: "context-menu", backgroundColor: "transparent" }}>
                         <NavLink to='/login'><button className='border-1 px-3 py-1 ' onClick={handleClose}>Login</button></NavLink>
                         <NavLink to='/register'><button className='px-2 py-1 border-1 ms-3' onClick={handleClose}>Register</button></NavLink>
                     </p>

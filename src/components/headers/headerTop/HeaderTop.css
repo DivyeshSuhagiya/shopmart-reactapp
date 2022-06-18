@@ -52,7 +52,7 @@
 .header-top .icon {
     position: relative;
 }
-.header-icon i , h6{
+.header-icon i , .header-icon h6{
     cursor: pointer;
     transition: 0.3s;
 }
@@ -99,7 +99,13 @@
     background-color: transparent;
     color: black;
 }
-.acount-icon .active{
+
+.acount-icon a{
+    color: black;
+    border: none !important;
+    text-decoration: none;
+}
+.login-register .active{
     color: white !important;
 }
 
