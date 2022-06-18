@@ -3,13 +3,14 @@ import { USER_REQUEST, USER_SUCCESS, USER_FAILURE } from "../types/type";
 
 
 let config = {
-    'content-type': 'application/json;'
+    'content-type': 'application/json;',
+    'Access-Control-Allow-Origin' : '*'
 }
 
 export const fetchuser = () => {
     return (dispatch) => {
         dispatch(userRequest());
-        axios.get("https://node-app-demo-first.herokuapp.com/api/user/get").then(response => {
+        axios.get("https://node-app-demo-first.herokuapp.com/api/user/get" , config).then(response => {
             const user = response.data.data
             dispatch(userSuccess(user))
         }).catch(error => {
