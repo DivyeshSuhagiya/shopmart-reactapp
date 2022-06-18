@@ -10,7 +10,7 @@ let config = {
 export const fetchuser = () => {
     return (dispatch) => {
         dispatch(userRequest());
-        axios.get("https://node-app-demo-first.herokuapp.com/api/user/get" , config).then(response => {
+        axios.get("https://shopmart-nodeapp.herokuapp.com/api/user/get" , config).then(response => {
             const user = response.data.data
             dispatch(userSuccess(user))
         }).catch(error => {
@@ -36,7 +36,7 @@ export const fetchuserRegister = (value) => {
     return (dispatch) => {
         dispatch(userRequest());
 
-        axios.post("https://node-app-demo-first.herokuapp.com/api/user/register" , value).then(response => {
+        axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/register" , value).then(response => {
             const user = response.data.data
             dispatch(userSuccess(user))
         }).catch(error => {
@@ -50,7 +50,7 @@ export const fetchuserLogin= (value) => {
 
     return (dispatch) => {
         dispatch(userRequest());
-        axios.post("https://node-app-demo-first.herokuapp.com/api/user/login" , value).then(response => {
+        axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/login" , value).then(response => {
             const user = response.data.userInfo
             dispatch(userSuccess(user))
             document.cookie = `userId=${user._id};path=/`;
@@ -65,7 +65,7 @@ export const fetchuserActivationCode= (emailOtp ,value) => {
     return (dispatch) => {
         dispatch(userRequest());
         let otp_obj = {email : emailOtp , accountActivationCode : value.accountActivationCode}
-        axios.post("https://node-app-demo-first.herokuapp.com/api/user/activateAccount" , otp_obj).then(response => {
+        axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/activateAccount" , otp_obj).then(response => {
             const user = response.data.data
             dispatch(userSuccess(user))
         }).catch(error => {
@@ -78,7 +78,7 @@ export const fetchuserGetById= () => {
     return (dispatch) => {
         dispatch(userRequest());
         let cookId = document.cookie.split("=")[1];
-        axios.get(`https://node-app-demo-first.herokuapp.com/api/user/getById?id=${cookId}`).then(response => {
+        axios.get(`https://shopmart-nodeapp.herokuapp.com/api/user/getById?id=${cookId}`).then(response => {
             const user = response.data.data
             dispatch(userSuccess(user))
         }).catch(error => {
