@@ -71,7 +71,7 @@ function Electronics() {
                             <h4>Best Sale Items of Electronics</h4>
                             <hr />
                             {
-                                electronics.filter(x => x.category === "Electronics").map(x => {
+                                electronics.filter(x => x.category === "Electronics")?.map(x => {
                                     return (
                                         <div className='col-6 col-md-4 col-lg-3 p-0'>
                                             <ProductComponent images={x.productImage} />

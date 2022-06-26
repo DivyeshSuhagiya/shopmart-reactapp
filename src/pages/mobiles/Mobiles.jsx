@@ -22,12 +22,12 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Mobiles() {
-    // const arr = useSelector(state => state.product.product)
-    // const dispatch = useDispatch()
+    const mobiles = useSelector(state => state.product.product)
+    const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(fetchProduct())
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchProduct())
+    }, [])
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -69,10 +69,10 @@ function Mobiles() {
                             <h4>Best Sale Items of Mobiles</h4>
                             <hr />
                             {
-                                imageObj.map(x => {
+                                mobiles.filter(x => x.category === "Mobiles")?.map(x => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3'>
-                                            <ProductComponent images={x.image} />
+                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
+                                            <ProductComponent images={x.productImage} />
                                         </div>
                                     )
                                 })

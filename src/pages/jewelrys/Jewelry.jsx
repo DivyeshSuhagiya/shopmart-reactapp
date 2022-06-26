@@ -22,7 +22,7 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Mobiles() {
-    const arr = useSelector(state => state.product)
+    const jewelry = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -55,7 +55,6 @@ function Mobiles() {
     ];
     return (
         <>
-        {console.log(arr)}
             <Slider slideImages={slideImages} />
             <div className='same-product-page py-5 px-3'>
                 <div className='row align-items-start'>
@@ -67,10 +66,10 @@ function Mobiles() {
                             <h4>Best Sale Items of Jewelry</h4>
                             <hr />
                             {
-                                imageObj.map(x => {
+                                jewelry.filter(x => x.category === "Jewelry")?.map(x => {
                                     return (
                                         <div className='col-6 col-md-4 col-lg-3 p-0'>
-                                            <ProductComponent images={x.image} />
+                                            <ProductComponent images={x.productImage} />
                                         </div>
                                     )
                                 })

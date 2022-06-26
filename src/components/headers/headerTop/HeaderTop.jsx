@@ -48,13 +48,13 @@ function HeaderTop() {
                                 <div className='acount-icon d-flex justify-content-between align-items-center'>
                                     <NavLink to="/account"><i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
                                     {
-                                        cookies && cookies === "false"? 
-                                        
+                                        cookies && cookies === "false" ?
+
                                             <div className='login-register  ms-2'>
                                                 <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
                                                 <NavLink to='/register' className='text-dark'><h6 className='m-0'>Register</h6></NavLink>
                                                 {/* <h6 className='m-0'>Account</h6> */}
-                                            </div> : 
+                                            </div> :
                                             <></>
                                     }
 
@@ -76,7 +76,7 @@ function HeaderTop() {
                             </form>
                         </div>
                         <div className='col-2 d-block d-sm-none text-end m-0 p-0'>
-                            <i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i>
+                            <NavLink to='/account' style={{color:"black"}}><i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
                         </div>
                     </div>
                 </div>
