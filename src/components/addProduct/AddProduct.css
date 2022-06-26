@@ -1,0 +1,16 @@
+.product-bg{
+    background-size: cover;
+    background-position: center center;
+}
+.product-bg label{
+    /* color: white; */
+    font-size: 16px;
+}
+.product-bg .form-control{
+    background-color: transparent;
+    /* color: white; */
+}
+.product-bg .form-control:focus{
+    box-shadow: none;
+    border-color: var(---main-bg);
+}

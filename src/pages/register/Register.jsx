@@ -18,26 +18,11 @@ function Register() {
     let obj = { userName: "", email: "", mobile: "", password: "", confirmPassword: "", accountActivationCode: "" }
     const [value, setvalue] = useState({ ...obj })
     const [emailotp, setemailotp] = useState()
-    // const [count, setcount] = useState(0)
-
-    // const { id } = useParams();
-    // let editObj;
-    // useEffect(() => {
-    //     if (id !== undefined) {
-    //         value.id = id
-    //         editObj = data.find(x => x.id == id)
-    //         setvalue(editObj)
-    //         console.log(editObj)
-    //     }
-    // }, [value.id, editObj])
-
 
     const ChangeInput = (e) => {
         setvalue({ ...value, [e.target.name]: e.target.value })
 
     }
-
-
     const SaveData = () => {
         if ((value.userName !== "") && (value.email !== "") && (value.mobile !== "") && (value.password !== "") && (value.confirmPassword !== "")) {
             dispatch(fetchuserRegister(value))
@@ -45,10 +30,6 @@ function Register() {
             document.getElementsByClassName('otp')[0].style.display = "block"
             setemailotp(value.email)
         }
-
-        // else{
-        //   dispatch(updateUser(value))
-        // }
         setvalue({ ...obj })
     }
     const SaveOtp = () => {

@@ -7,6 +7,7 @@ import './Account.css'
 import { FaCog , FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchuser, fetchuserGetById } from '../../redux/actions/useraction.js'
+import AddProduct from '../../components/addProduct/AddProduct'
 
 function Account() {
 
@@ -43,6 +44,7 @@ function Account() {
                 </div>
             </div>
 
+            <AddProduct />
 
             <NewSletter />
             <ContactLinks />

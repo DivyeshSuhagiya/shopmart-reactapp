@@ -38,9 +38,6 @@ function Login() {
 
     return (
         <>
-        {/* {
-            cookies.userId === undefined? 
-         */}
             <div className='p-2 pb-4'>
                 <div className='login-main mt-2 shadow'>
                     <div className='login-img row align-items-start'>
@@ -67,8 +64,6 @@ function Login() {
                     </div>
                 </div>
             </div>
-             {/* : ""
-            }  */}
         </>
     )
 }

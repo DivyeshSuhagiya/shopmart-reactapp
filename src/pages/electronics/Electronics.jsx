@@ -23,6 +23,13 @@ import { fetchProduct } from '../../redux/actions/productaction'
 
 function Electronics() {
 
+    const electronics = useSelector(state => state.product.product)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProduct())
+    }, [])
+
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -50,21 +57,24 @@ function Electronics() {
     ];
     return (
         <>
+        {
+            // console.log(electronics.filter(x => x.category === "Electronics").map(x => x.productImage))
+        }
             <Slider slideImages={slideImages} />
             <div className='same-product-page py-5 px-3'>
                 <div className='row align-items-start'>
                     <div className='col-3 d-none d-md-block'>
                         <PageCategories />
                     </div>
-                    <div className='col-12 col-md-9'>
+                    <div className='col-12 col-md-9 p-0'>
                         <div className='row'>
                             <h4>Best Sale Items of Electronics</h4>
                             <hr />
                             {
-                                imageObj.map(x => {
+                                electronics.filter(x => x.category === "Electronics").map(x => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3'>
-                                            <ProductComponent images={x.image} />
+                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
+                                            <ProductComponent images={x.productImage} />
                                         </div>
                                     )
                                 })
