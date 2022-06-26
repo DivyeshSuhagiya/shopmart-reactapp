@@ -62,14 +62,14 @@ function Mobiles() {
                     <div className='col-3 d-none d-md-block'>
                         <PageCategories />
                     </div>
-                    <div className='col-12 col-md-9'>
+                    <div className='col-12 col-md-9 p-0'>
                         <div className='row'>
                             <h4>Best Sale Items of Jewelry</h4>
                             <hr />
                             {
                                 imageObj.map(x => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3'>
+                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
                                             <ProductComponent images={x.image} />
                                         </div>
                                     )
