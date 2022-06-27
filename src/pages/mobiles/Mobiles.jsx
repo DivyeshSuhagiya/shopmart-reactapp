@@ -64,7 +64,7 @@ function Mobiles() {
                     <div className='col-3 d-none d-md-block'>
                         <PageCategories />
                     </div>
-                    <div className='col-12 col-md-9'>
+                    <div className='col-12 col-md-9 p-0'>
                         <div className='row'>
                             <h4>Best Sale Items of Mobiles</h4>
                             <hr />

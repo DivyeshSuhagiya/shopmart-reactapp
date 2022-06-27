@@ -44,7 +44,7 @@ function AddProduct() {
                         <div className='col-12 col-md-6 p-0 px-3'>
                             <div className="form-group">
                                 <label className="control-label" for="product_name">PRODUCT NAME</label>
-                                <input id="product_name" value={value.productName} name="productName" placeholder="PRODUCT NAME" className="form-control mb-4" required="" type="text" onChange={ChangeInput} />
+                                <input id="product_name" value={value.productName} name="productName" placeholder="Enter Product Name" className="form-control mb-4" required="" type="text" onChange={ChangeInput} />
                             </div>
 
                             <div className="form-group">
@@ -62,21 +62,21 @@ function AddProduct() {
 
                             <div className="form-group">
                                 <label className="control-label" for="available_quantity">MARKET PRICE</label>
-                                <input id="available_quantity" value={value.price} name="price" placeholder="AVAILABLE QUANTITY" className="form-control mb-4" required="" type="number" onChange={ChangeInput} />
+                                <input id="available_quantity" value={value.price} name="price" placeholder="Enter Market Price" className="form-control mb-4" required="" type="number" onChange={ChangeInput} />
                             </div>
                             <div className="form-group">
                                 <label className="control-label" for="available_quantity">YOUR PRICE</label>
-                                <input id="available_quantity" value={value.offerPrice} name="offerPrice" placeholder="AVAILABLE QUANTITY" className="form-control mb-4" required="" type="number" onChange={ChangeInput} />
+                                <input id="available_quantity" value={value.offerPrice} name="offerPrice" placeholder="Enter Your Price" className="form-control mb-4" required="" type="number" onChange={ChangeInput} />
                             </div>
                         </div>
                         <div className='col-12 col-md-6 p-0 px-3'>
                             <div className="form-group">
                                 <label className="control-label" for="available_quantity">SHOP NAME</label>
-                                <input id="available_quantity" value={value.shopName} name="shopName" placeholder="AVAILABLE QUANTITY" className="form-control mb-4" required="" type="text" onChange={ChangeInput} />
+                                <input id="available_quantity" value={value.shopName} name="shopName" placeholder="Enter Shop Name" className="form-control mb-4" required="" type="text" onChange={ChangeInput} />
                             </div>
                             <div className="form-group">
                                 <label className="control-label" for="percentage_discount">PERCENTAGE DISCOUNT</label>
-                                <input id="percentage_discount" value={value.discount} name="discount" placeholder="PERCENTAGE DISCOUNT" className="form-control mb-4" required="" type="number" onChange={ChangeInput}/>
+                                <input id="percentage_discount" value={value.discount} name="discount" placeholder="Enter Discount In Percentage" className="form-control mb-4" required="" type="number" onChange={ChangeInput}/>
                             </div>
                             <div className="form-group">
                                 <label class="form-label" for="customFile">SELECT PRODUCT IMAGE</label>

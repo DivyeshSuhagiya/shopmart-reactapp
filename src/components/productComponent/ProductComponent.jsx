@@ -41,7 +41,7 @@ function ProductComponent(props) {
     return (
         <>
             <div>
-                <Card className='product-card overflow-hidden p-2 m-2 border-0'>
+                <Card className='product-card overflow-hidden p-2 m-1 mb-3 border-0'>
                     <Badge bg="warning" className='p-2 fs-6' style={{ position: "absolute", right: "5px", top: "5px", zIndex: 99 }}>-18%</Badge>{' '}
                     <Card.Img height={280} width={280} variant="top" src={`https://shopmart-nodeapp.herokuapp.com/${props.images}`} className="py-0 img-fluid" />
                     <Card.Body className="mt-3 pt-0 card-body per position-relative " style={{ zIndex: "200" }}>
@@ -50,13 +50,13 @@ function ProductComponent(props) {
                             <FaShopify className='product-icon mx-1' />
                             <BsEye className="product-icon mx-1" style={{ cursor: "pointer" }} onClick={handleShow} />
                         </div>
-                        <Card.Title style={{ fontSize: "14px" }}>YOUNG SHOP</Card.Title><hr />
+                        <Card.Title style={{ fontSize: "14px" }}>YOUNG SHOP</Card.Title><hr className='my-1' />
                         <div>
                             <span className='price pe-2 text-success fw-bold fs-6'>$670.2</span>
                             <span className='old-price text-muted pe-2' >$568.8</span>
                             <span className='discount text-danger' >18% off</span>
                         </div>
-                        <div className='product-name mb-0 mt-3' style={{overflow: "hidden" , fontSize: "14px", whiteSpace:"nowrap",textOverflow: "ellipsis" }}>
+                        <div className='product-name mb-0 mt-1' style={{overflow: "hidden" , fontSize: "14px", whiteSpace:"nowrap",textOverflow: "ellipsis" }}>
                             Korea Long Sofa Fabric In Blue Navy Color
                         </div>
                         <Rating onClick={handleRating} className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={rating} />
