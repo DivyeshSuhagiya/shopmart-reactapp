@@ -46,8 +46,11 @@ function App() {
                 <>
                   <Route path='/login'><Login /></Route>
                   <Route path='/register'><Register /></Route>
+                  <Route path='/account'>
+                    <Redirect to='/login' />
+                  </Route>
                 </>
-                : 
+                :
                 <>
                   <Route path='/login'>
                     <Redirect to='/' />
@@ -55,10 +58,9 @@ function App() {
                   <Route path='/register'>
                     <Redirect to='/' />
                   </Route>
+                  <Route path='/account'><Account /></Route>
                 </>
             }
-
-            <Route path='/account'><Account /></Route>
           </BrowserRouter>
         </div>
       </Provider>
