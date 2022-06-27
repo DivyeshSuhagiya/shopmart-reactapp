@@ -41,10 +41,10 @@ function ProductComponent(props) {
     return (
         <>
             <div>
-                <Card className='product-card overflow-hidden p-2 m-1 mb-3 border-0'>
+                <div className='card product-card overflow-hidden p-2 m-1 mb-3 border-0 h-100'>
                     <Badge bg="warning" className='p-2 fs-6' style={{ position: "absolute", right: "5px", top: "5px", zIndex: 99 }}>-18%</Badge>{' '}
                     <Card.Img height={280} width={280} variant="top" src={`https://shopmart-nodeapp.herokuapp.com/${props.images}`} className="py-0 img-fluid" />
-                    <Card.Body className="mt-3 pt-0 card-body per position-relative " style={{ zIndex: "200" }}>
+                    <Card.Body className="mt-3 pt-0 card-body per position-relative" style={{ zIndex: "200" }}>
                         <div class="child  w-100 text-muted  py-1 position-absolute text-center" style={{ height: "35px" }}>
                             <FaRegHeart className='product-icon mx-1' />
                             <FaShopify className='product-icon mx-1' />
@@ -65,7 +65,7 @@ function ProductComponent(props) {
                             Sold: 22
                         </div>
                     </Card.Body>
-                </Card>
+                </div>
 
 
                 <Modal show={show} size="fullscreen" onHide={handleClose} className="p-0" >
