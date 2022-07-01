@@ -8,8 +8,10 @@ import { FaCog, FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchuser, fetchuserGetById } from '../../redux/actions/useraction.js'
 import AddProduct from '../../components/addProduct/AddProduct'
+import { useCookies } from 'react-cookie'
 
 function Account() {
+    const [cookies, setCookie, removeCookie] = useCookies(["userId"]);
 
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
@@ -51,7 +53,7 @@ function Account() {
                                     <FaCog /><h6 className='ms-2'>Setting</h6>
                                 </div>
                                 <div className='d-flex mt-4'>
-                                    <FaSignOutAlt /><h6 className='ms-2'>LogOut</h6>
+                                    <FaSignOutAlt /><h6 className='ms-2 cursor-pointer' onClick={() => removeCookie("userId")}>LogOut</h6>
                                 </div>
                             </div>
                         </div>

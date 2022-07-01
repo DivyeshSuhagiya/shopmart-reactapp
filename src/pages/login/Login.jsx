@@ -7,6 +7,7 @@ import { useState , useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import { NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Login() {
     const [cookies, setCookie] = useCookies(["userId"]);
@@ -29,11 +30,26 @@ function Login() {
         if((value.email !== "") && (value.password !== ""))
         {
             dispatch(fetchuserLogin(value));
+
             if(document.cookie !== undefined){
                 document.getElementsByClassName('login-main')[0].style.display = "none"
             }
-        }
+            Swal.fire({
+                title: 'successfull...',
+                text: "Account Login Successfully..",
+                icon: "success",
+                allowOutsideClick: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Done!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload()
+                }
+              })
+        }   
         setvalue({ ...obj })
+        
     }
 
     return (
@@ -54,7 +70,9 @@ function Login() {
                                 <label for="exampleInputPassword1">Password</label>
                                 <input type="password" name='password' value={value.password} class="form-control" id="exampleInputPassword1" placeholder="Password" onChange={ChangeInput} />
                             </div>
-                            <NavLink to={cookies.userId && cookies.userId === undefined? "/login" : "/account"}><button type="button" onClick={() => SaveData()} class="shopNow btn_hover mt-4">Submit</button></NavLink>
+                            <NavLink to={cookies.userId && cookies.userId === undefined? "/login" :"/account"}>
+                                <button type="button" onClick={() => SaveData()} class="shopNow btn_hover mt-4">Submit</button>
+                                </NavLink>
                         </form>
                         <div className='ps-3 mt-5'>
                             <FaFacebook className='me-3' size="30px" style={{color:"#144e6e"}}/>
