@@ -78,7 +78,7 @@ function Account() {
                 {
                     product?.filter(x => x.userId === cookies.userId)?.map(x => {
                         return (
-                            <div className='col-12 col-md-4'>
+                            <div className='col-6 col-md-4'>
                                 <div className="card border-0 py-2">
                                     <div className="row g-0">
                                         <div className="col-md-4">
@@ -92,7 +92,6 @@ function Account() {
                                                 <span className='text-muted' style={{fontSize:"12px"}}><del>₹{x.offerPrice}</del></span>
                                                 <h6 className='text-danger'>{x.discount}% off</h6>
                                                 <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
-                                                
                                             </div>
                                         </div>
                                     </div>
