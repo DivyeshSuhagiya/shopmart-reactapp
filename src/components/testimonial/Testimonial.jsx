@@ -1,15 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import ProductComponent from '../productComponent/ProductComponent'
 import './Testimonial.css'
-import cateImg1 from '../../assets/images/1.jpg'
-import cateImg2 from '../../assets/images/2.jpg'
-import cateImg3 from '../../assets/images/3.jpg'
-import cateImg4 from '../../assets/images/4.jpg'
-import cateImg5 from '../../assets/images/5.jpg'
-import cateImg6 from '../../assets/images/6.jpg'
-import cateImg7 from '../../assets/images/7.jpg'
-import cateImg8 from '../../assets/images/8.jpg'
 
 function Testimonial(props) {
 

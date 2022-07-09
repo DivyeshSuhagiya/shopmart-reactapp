@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import './ProductComponent.css'
-import img1 from "../../assets/images/5.jpg"
 import Card from 'react-bootstrap/Card'
 import Badge from 'react-bootstrap/Badge'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,10 +7,7 @@ import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'react-slideshow-image/dist/styles.css'
-import { Col, Container, Row } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal'
-import { BiShow } from "react-icons/bi";
-import { Button } from 'react-bootstrap';
 import { BsEye } from "react-icons/bs"
 import { FaRegHeart, FaShopify , FaFacebookSquare ,FaGooglePlusSquare , FaTwitterSquare , FaLinkedin } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
@@ -29,7 +25,7 @@ function ProductComponent(props) {
     
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [])
+    }, [dispatch])
 
     const handleRating = (rate) => {
         setRating(rate)

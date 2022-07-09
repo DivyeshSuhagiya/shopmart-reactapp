@@ -11,7 +11,7 @@ function HomeKitchen(props) {
 
   useEffect(() => {
     dispatch(fetchProduct())
-  }, [])
+  }, [dispatch])
 
 
   return (

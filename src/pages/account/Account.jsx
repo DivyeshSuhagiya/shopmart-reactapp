@@ -6,7 +6,7 @@ import ProductLinks from '../../components/productLinks/ProductLinks'
 import './Account.css'
 import { FaCog, FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchuser, fetchuserGetById } from '../../redux/actions/useraction.js'
+import { fetchuserGetById } from '../../redux/actions/useraction.js'
 import AddProduct from '../../components/addProduct/AddProduct'
 import { useCookies } from 'react-cookie'
 import { fetchProduct } from '../../redux/actions/productaction'
@@ -19,14 +19,15 @@ function Account() {
     const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
-    const productNum = product.filter(x => x._id === cookies.userId)
+    const productNum = product.filter(x => x.userId === cookies.userId)
+
     useEffect(() => {
         dispatch(fetchuserGetById())
-    }, [user])
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [product])
+    }, [dispatch])
 
     return (
         <>

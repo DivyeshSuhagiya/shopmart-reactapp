@@ -11,7 +11,7 @@ function Clothing(props) {
 
   useEffect(() => {
     dispatch(fetchProduct())
-  }, [])
+  }, [dispatch])
 
   return (
     <>

@@ -11,7 +11,7 @@ function HotNew(props) {
 
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [])
+    }, [dispatch])
 
     return (
         <>

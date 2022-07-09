@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Slider from '../../components/sliders/Slider'
 import SliderMenu from '../../components/sliderMenu/SliderMenu'
 import Services from '../../components/services/Services'
@@ -29,8 +29,6 @@ import slide1 from '../../assets/images/slide-1.jpg'
 import slide2 from '../../assets/images/slide-2.jpg'
 import slide3 from '../../assets/images/slide-3.jpg'
 import HomeKitchen from '../../components/home kithcen/HomeKitchen'
-import { fetchProduct } from '../../redux/actions/productaction'
-import { useDispatch, useSelector } from 'react-redux'
 function Page1() {
 
     
@@ -122,23 +120,6 @@ function Page1() {
 
             <Subscribe />
 
-
-            {/* <div className='p-3 py-5'>
-                <h4 className='mb-0 p-3' style={{ backgroundColor: "var(--light-gray)" }}>Hot New Arrivals</h4>
-                <div className='row text-center g-4'>
-                    {
-                        imageObj.map((x) => {
-                            return (
-                                <div className='col-6 col-lg-3 col-md-4 p-2' >
-                                    <div className='product-card'>
-                                        <HotNew images={x.image} name={x.name} />
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </div> */}
             <HotNew />
 
             <NewSletter />

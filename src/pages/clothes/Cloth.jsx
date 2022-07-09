@@ -4,14 +4,6 @@ import slide1 from '../../assets/images/ee.jpg'
 import slide2 from '../../assets/images/ebanner-2.png'
 import slide3 from '../../assets/images/ebanner-3.png'
 import ProductComponent from '../../components/productComponent/ProductComponent'
-import cateImg1 from '../../assets/images/1.jpg'
-import cateImg2 from '../../assets/images/2.jpg'
-import cateImg3 from '../../assets/images/3.jpg'
-import cateImg4 from '../../assets/images/4.jpg'
-import cateImg5 from '../../assets/images/5.jpg'
-import cateImg6 from '../../assets/images/6.jpg'
-import cateImg7 from '../../assets/images/7.jpg'
-import cateImg8 from '../../assets/images/8.jpg'
 import PageCategories from '../../components/pagecategory/PageCategories'
 import NewSletter from '../../components/newSletter/NewSletter'
 import ContactLinks from '../../components/contactLinks/ContactLinks'
@@ -27,7 +19,7 @@ function Cloth() {
 
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [])
+    }, [dispatch])
 
     const slideImages = [
         {

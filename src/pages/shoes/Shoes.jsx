@@ -19,7 +19,7 @@ function Shoes() {
 
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [])
+    }, [dispatch])
 
     const slideImages = [
         {

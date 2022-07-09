@@ -11,7 +11,7 @@ function DealOfTheDay(props) {
 
   useEffect(() => {
     dispatch(fetchProduct())
-  }, [])
+  }, [dispatch])
 
 
   return (

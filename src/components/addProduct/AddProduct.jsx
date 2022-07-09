@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { fetchProduct, fetchProductPost } from '../../redux/actions/productaction'
 import "./AddProduct.css"
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
 import { useCookies } from 'react-cookie'
 
 function AddProduct() {
     const [cookies, setCookie] = useCookies(["userId"]);
-    const arr = useSelector(state => state.product)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchProduct())
-    }, [])
+    }, [dispatch])
 
     let obj = { shopName: "", price: "", offerPrice: "", productImage: "", discount: "", productName: "" , category : "" , userId : cookies.userId}
     const [value, setvalue] = useState({ ...obj })

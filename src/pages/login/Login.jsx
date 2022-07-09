@@ -1,10 +1,9 @@
 import React from 'react'
-import bg_img from '../../assets/images/login.jpg'
 import './Login.css'
 import { FaFacebook, FaTwitter, FaGooglePlusG } from "react-icons/fa";
-import { fetchuser, fetchuserLogin } from '../../redux/actions/useraction.js';
-import { useState , useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { fetchuserLogin } from '../../redux/actions/useraction.js';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -12,12 +11,12 @@ import Swal from 'sweetalert2';
 function Login() {
     const [cookies, setCookie] = useCookies(["userId"]);
 
-    const user = useSelector(state => state.user.user)
+    // const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        dispatch(fetchuserLogin())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(fetchuserLogin())
+    // }, [])
 
     let obj = {  email: "" , password : "" }
     const [value, setvalue] = useState({ ...obj })

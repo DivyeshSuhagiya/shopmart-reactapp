@@ -11,7 +11,7 @@ function CustomerElectronic(props) {
 
   useEffect(() => {
     dispatch(fetchProduct())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
