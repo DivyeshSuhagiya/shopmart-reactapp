@@ -19,9 +19,9 @@ function HotNew(props) {
             <Testimonial DealOfTheDay={
                 product.filter(x => x)?.map((x, i) => {
                     return (
-                        <div className="card border-0 py-2">
+                        <div className="card border-0 py-2" key={i}>
                             <div className="row g-0">
-                                <div className="col-md-4">
+                                <div className="col-md-4" >
                                     <img src={x.productImage} className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-8">

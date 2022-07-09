@@ -86,10 +86,10 @@ function Page1() {
 
                     <Testimonial
                         aa={
-                            imageObj.map((x) => {
+                            imageObj.map((x,i) => {
                                 return (
                                     <div className=' monthCate col-6 col-lg-2 col-md-3' >
-                                        <div className='border-1 m-2 p-3'>
+                                        <div className='border-1 m-2 p-3' key={i}>
                                             <MonthCategoies images={x.image} name={x.name} />
                                         </div>
                                     </div>
