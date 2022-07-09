@@ -31,9 +31,6 @@ function Login() {
         {
             dispatch(fetchuserLogin(value));
 
-            // if(document.cookie !== undefined){
-            //     document.getElementsByClassName('login-main')[0].style.display = "none"
-            // }
             Swal.fire({
                 title: 'successfull...',
                 text: "Account Login Successfully..",
@@ -43,7 +40,7 @@ function Login() {
                 confirmButtonText: 'Done!'
               }).then((result) => {
                 if (result.isConfirmed) {
-                //   window.location.reload()
+                  window.location.reload()
                 }
               })
         }   

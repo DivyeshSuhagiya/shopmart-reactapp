@@ -19,6 +19,7 @@ function Account() {
     const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
+    const productNum = product.filter(x => x._id === cookies.userId)
     useEffect(() => {
         dispatch(fetchuserGetById())
     }, [user])
@@ -54,7 +55,7 @@ function Account() {
                                 </div>
                                 <div className='my-3'>
                                     <h6 className='px-2'>Your Products</h6>
-                                    <p className='bg-white p-2'>{product ? product.length : "---"}</p>
+                                    <p className='bg-white p-2'>{product ? productNum.length : "---"}</p>
                                 </div>
                                 <div className='d-flex mt-5'>
                                     <FaCog /><h6 className='ms-2'>Setting</h6>
