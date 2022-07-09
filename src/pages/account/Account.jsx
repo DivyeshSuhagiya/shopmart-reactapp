@@ -9,16 +9,23 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchuser, fetchuserGetById } from '../../redux/actions/useraction.js'
 import AddProduct from '../../components/addProduct/AddProduct'
 import { useCookies } from 'react-cookie'
+import { fetchProduct } from '../../redux/actions/productaction'
+import { Rating } from 'react-simple-star-rating'
 
 function Account() {
     const [cookies, setCookie, removeCookie] = useCookies(["userId"]);
 
     const user = useSelector(state => state.user.user)
+    const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchuserGetById())
     }, [user])
+
+    useEffect(() => {
+        dispatch(fetchProduct())
+    }, [product])
 
     return (
         <>
@@ -47,7 +54,7 @@ function Account() {
                                 </div>
                                 <div className='my-3'>
                                     <h6 className='px-2'>Your Products</h6>
-                                    <p className='bg-white p-2'>{user ? user.mobile : "---"}</p>
+                                    <p className='bg-white p-2'>{product ? product.length : "---"}</p>
                                 </div>
                                 <div className='d-flex mt-5'>
                                     <FaCog /><h6 className='ms-2'>Setting</h6>
@@ -62,6 +69,38 @@ function Account() {
             </div>
 
             <AddProduct />
+
+
+            <div className='row my-5 px-3'>
+                <h4 className='ms-2'>Your All Products</h4><hr />
+                {
+                    product?.filter(x => x.userId === cookies.userId)?.map(x => {
+                        return (
+                            <div className='col-12 col-md-4'>
+                                <div className="card border-0 py-2">
+                                    <div className="row g-0">
+                                        <div className="col-md-4">
+                                            <img src={x.productImage} className="img-fluid rounded-start" alt="..." />
+                                        </div>
+                                        <div className="col-md-8">
+                                            <div className="card-body text-start">
+                                                <p className='p-0 my-1'>{x.shopName}</p>
+                                                <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
+                                                <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
+                                                <span className='text-muted' style={{fontSize:"12px"}}><del>₹{x.offerPrice}</del></span>
+                                                <h6 className='text-danger'>{x.discount}% off</h6>
+                                                <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+
+            </div>
 
             <NewSletter />
             <ContactLinks />

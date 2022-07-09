@@ -4,14 +4,6 @@ import slide1 from '../../assets/images/ee.jpg'
 import slide2 from '../../assets/images/ebanner-2.png'
 import slide3 from '../../assets/images/ebanner-3.png'
 import ProductComponent from '../../components/productComponent/ProductComponent'
-import cateImg1 from '../../assets/images/1.jpg'
-import cateImg2 from '../../assets/images/2.jpg'
-import cateImg3 from '../../assets/images/3.jpg'
-import cateImg4 from '../../assets/images/4.jpg'
-import cateImg5 from '../../assets/images/5.jpg'
-import cateImg6 from '../../assets/images/6.jpg'
-import cateImg7 from '../../assets/images/7.jpg'
-import cateImg8 from '../../assets/images/8.jpg'
 import PageCategories from '../../components/pagecategory/PageCategories'
 import NewSletter from '../../components/newSletter/NewSletter'
 import ContactLinks from '../../components/contactLinks/ContactLinks'
@@ -22,22 +14,12 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Shoes() {
-    const arr = useSelector(state => state.product)
+    const shoes = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchProduct())
     }, [])
-    const imageObj = [
-        { image: cateImg1, name: "Electronics" },
-        { image: cateImg2, name: "Clothings" },
-        { image: cateImg3, name: "Computers" },
-        { image: cateImg4, name: "Home & Kitchen" },
-        { image: cateImg5, name: "Health & Beauty" },
-        { image: cateImg6, name: "Watch" },
-        { image: cateImg7, name: "Jewelry & watch" },
-        { image: cateImg8, name: "Mobiles" }
-    ]
 
     const slideImages = [
         {
@@ -55,7 +37,6 @@ function Shoes() {
     ];
     return (
         <>
-        {console.log(arr)}
             <Slider slideImages={slideImages} />
             <div className='same-product-page py-5 px-3'>
                 <div className='row align-items-start'>
@@ -67,10 +48,10 @@ function Shoes() {
                             <h4>Best Sale Items of Shoes</h4>
                             <hr />
                             {
-                                imageObj.map(x => {
+                                shoes.filter(x => x.category === "Mobiles")?.map((x,i) => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
-                                            <ProductComponent images={x.image} />
+                                        <div className='col-6 col-md-4 col-lg-3 p-0' key={i}>
+                                            <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
                                         </div>
                                     )
                                 })

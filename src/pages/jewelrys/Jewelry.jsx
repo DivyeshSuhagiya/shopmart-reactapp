@@ -66,10 +66,10 @@ function Mobiles() {
                             <h4>Best Sale Items of Jewelry</h4>
                             <hr />
                             {
-                                jewelry.filter(x => x.category === "Jewelry")?.map(x => {
+                                jewelry.filter(x => x.category === "Jewelry")?.map((x,i) => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
-                                            <ProductComponent images={x.productImage} />
+                                        <div className='col-6 col-md-4 col-lg-3 p-0' key={i}>
+                                            <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
                                         </div>
                                     )
                                 })

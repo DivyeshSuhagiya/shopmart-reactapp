@@ -59,7 +59,7 @@ function Cloth() {
                                 clothes.filter(x => x.category === "Cloth")?.map(x => {
                                     return (
                                         <div className='col-6 col-md-4 col-lg-3 p-0'>
-                                            <ProductComponent images={x.productImage} />
+                                            <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id} />
                                         </div>
                                     )
                                 })

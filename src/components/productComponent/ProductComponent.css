@@ -87,8 +87,11 @@
   text-overflow:ellipsis ;
   overflow: hidden;
 }
-
-
+.my-modal {
+  width: 90vw !important;   
+  max-width: 90vw;
+  margin: 30px auto;
+} 
 @media screen and (max-width : 1100px) {
   .child {
     bottom: 103%;

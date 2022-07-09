@@ -22,22 +22,12 @@ import { useEffect } from 'react'
 import { fetchProduct } from '../../redux/actions/productaction'
 
 function Watches() {
-    const arr = useSelector(state => state.product)
+    const watches = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchProduct())
     }, [])
-    const imageObj = [
-        { image: cateImg1, name: "Electronics" },
-        { image: cateImg2, name: "Clothings" },
-        { image: cateImg3, name: "Computers" },
-        { image: cateImg4, name: "Home & Kitchen" },
-        { image: cateImg5, name: "Health & Beauty" },
-        { image: cateImg6, name: "Watch" },
-        { image: cateImg7, name: "Jewelry & watch" },
-        { image: cateImg8, name: "Mobiles" }
-    ]
 
     const slideImages = [
         {
@@ -55,7 +45,6 @@ function Watches() {
     ];
     return (
         <>
-        {console.log(arr)}
             <Slider slideImages={slideImages} />
             <div className='same-product-page py-5 px-3'>
                 <div className='row align-items-start'>
@@ -67,10 +56,10 @@ function Watches() {
                             <h4>Best Sale Items of Watches</h4>
                             <hr />
                             {
-                                imageObj.map(x => {
+                                watches.filter(x => x.category === "Mobiles")?.map((x,i) => {
                                     return (
-                                        <div className='col-6 col-md-4 col-lg-3 p-0'>
-                                            <ProductComponent images={x.image} />
+                                        <div className='col-6 col-md-4 col-lg-3 p-0' key={i}>
+                                            <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
                                         </div>
                                     )
                                 })

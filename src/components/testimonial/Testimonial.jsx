@@ -11,10 +11,8 @@ import cateImg6 from '../../assets/images/6.jpg'
 import cateImg7 from '../../assets/images/7.jpg'
 import cateImg8 from '../../assets/images/8.jpg'
 
-function Testimonial() {
-    const ComponentList = {
-        ProductComponent
-    }
+function Testimonial(props) {
+
     var settings = {
         dots: true,
         infinite: false,
@@ -49,61 +47,11 @@ function Testimonial() {
             }
         ]
     };
-    const imageObj = [
-        { image: cateImg1, name: "Electronics" },
-        { image: cateImg2, name: "Clothings" },
-        { image: cateImg3, name: "Computers" },
-        { image: cateImg4, name: "Home & Kitchen" },
-        { image: cateImg5, name: "Health & Beauty" },
-        { image: cateImg6, name: "Watch" },
-        { image: cateImg7, name: "Jewelry & watch" },
-        { image: cateImg8, name: "Mobiles" }
-    ]
     return (
         <>
             <Slider {...settings} className='py-3'>
-                {
-                    imageObj.map(x => {
-                        return(
-                            <ProductComponent images={x.image}/>
-                        )
-                    })
-                }
-                {/* {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
-                {props.DealOfTheDay}
                 {props.DealOfTheDay}
                 {props.CustomerElectronic}
-                {props.CustomerElectronic}
-                {props.CustomerElectronic}
-                {props.CustomerElectronic}
-                {props.CustomerElectronic}
-                {props.CustomerElectronic}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Clothing}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.Kitchen}
-                {props.aa} */}
-                {/* <AAA /> */}
             </Slider>
         </>
     )

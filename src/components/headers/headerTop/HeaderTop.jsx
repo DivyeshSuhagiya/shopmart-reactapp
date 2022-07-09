@@ -17,14 +17,14 @@ function HeaderTop() {
     return (
         <>
             <div className='header-top px-3 py-1'>
-                <div class="">
+                <div className="">
                     <div className='row'>
                         <div className='logo col-6 col-sm-3 col-lg-2 p-0'><h1 className='fs-2'>Shop<span style={{ color: "white" }}>mart</span></h1></div>
                         <div className='col-12 col-sm-8 col-lg-7 p-0 d-none d-sm-block'>
                             <form className='header-search'>
-                                <div class="search-group mb-3">
+                                <div className="search-group mb-3">
                                     <input type="text" placeholder="I'm a shopping for.." />
-                                    <div class="search-group-append">
+                                    <div className="search-group-append">
                                         {/* <i className='bx bx-search-alt-2 bx-sm' style={{ color: "white" }}  ></i> */}
                                         Search
                                     </div>
@@ -35,29 +35,26 @@ function HeaderTop() {
                         <div className='col col-lg-3 d-none d-lg-block'>
                             <div className='header-icon d-flex justify-content-evenly align-items-center'>
                                 <div className='icon'>
-                                    <i class='bx bx-heart bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Favorite"></i>
+                                    <i className='bx bx-heart bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Favorite"></i>
                                     <span>1</span>
                                 </div>
                                 <div className='icon'>
-                                    <i class='bx bx-shopping-bag bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cart"></i>
+                                    <i className='bx bx-shopping-bag bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cart"></i>
                                     <span>0</span>
                                 </div>
                                 <div>
-                                    <i class='bx bx-notepad bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Feedback"></i>
+                                    <i className='bx bx-notepad bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Feedback"></i>
                                 </div>
                                 <div className='acount-icon d-flex justify-content-between align-items-center'>
-                                    <NavLink to="/account"><i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
+                                    <NavLink to="/account"><i className='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
                                     {
-                                        cookies && cookies === "false" ?
-
+                                        cookies.userId && cookies.userId === undefined ?
                                             <div className='login-register  ms-2'>
                                                 <NavLink to='/login' className='text-dark'> <h6 className='m-0'>Login</h6></NavLink>
                                                 <NavLink to='/register' className='text-dark'><h6 className='m-0'>Register</h6></NavLink>
-                                                {/* <h6 className='m-0'>Account</h6> */}
                                             </div> :
                                             <></>
                                     }
-
                                 </div>
                             </div>
                         </div>
@@ -66,9 +63,9 @@ function HeaderTop() {
                     <div className='row p-0' style={{ backgroundColor: "#FCB800" }}>
                         <div className='col-10 d-block d-sm-none text-start p-0 m-0'>
                             <form className='header-search p-0 m-0'>
-                                <div class="search-group mb-3">
+                                <div className="search-group mb-3">
                                     <input type="text" placeholder="I'm a shopping for.." />
-                                    <div class="search-group-append">
+                                    <div className="search-group-append">
                                         {/* <i className='bx bx-search-alt-2 bx-sm' style={{ color: "white" }}  ></i> */}
                                         Search
                                     </div>
@@ -76,7 +73,7 @@ function HeaderTop() {
                             </form>
                         </div>
                         <div className='col-2 d-block d-sm-none text-end m-0 p-0'>
-                            <NavLink to='/account' style={{color:"black"}}><i class='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
+                            <NavLink to='/account' style={{color:"black"}}><i className='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
                         </div>
                     </div>
                 </div>

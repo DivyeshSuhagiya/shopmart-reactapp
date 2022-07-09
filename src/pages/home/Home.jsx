@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from '../../components/sliders/Slider'
 import SliderMenu from '../../components/sliderMenu/SliderMenu'
 import Services from '../../components/services/Services'
@@ -10,7 +10,7 @@ import cateImg3 from '../../assets/images/3.jpg'
 import cateImg4 from '../../assets/images/4.jpg'
 import cateImg5 from '../../assets/images/5.jpg'
 import cateImg6 from '../../assets/images/6.jpg'
-import cateImg7 from '../../assets/images/7.jpg'
+import cateImg7 from '../../assets/images/jewelry/1.jpg'
 import cateImg8 from '../../assets/images/8.jpg'
 import offerImage1 from '../../assets/images/offerImage1.jpeg'
 import offerImage2 from '../../assets/images/offerImage2.jpeg'
@@ -29,7 +29,12 @@ import slide1 from '../../assets/images/slide-1.jpg'
 import slide2 from '../../assets/images/slide-2.jpg'
 import slide3 from '../../assets/images/slide-3.jpg'
 import HomeKitchen from '../../components/home kithcen/HomeKitchen'
+import { fetchProduct } from '../../redux/actions/productaction'
+import { useDispatch, useSelector } from 'react-redux'
 function Page1() {
+
+    
+
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -71,7 +76,6 @@ function Page1() {
 
             <Services />
 
-            {/* <DealOfTheDay DealOfTheDay={<ProductComponent />} /> */}
             <DealOfTheDay />
             
 
@@ -98,9 +102,9 @@ function Page1() {
                 </div>
             </div>
 
-            <CustomerElectronic CustomerElectronic={<ProductComponent images={cateImg1}/>} />
+            <CustomerElectronic />
 
-            <Clothing Clothing={<ProductComponent />} />
+            <Clothing />
 
             <HomeKitchen Kitchen={<ProductComponent />} />
 
@@ -119,7 +123,7 @@ function Page1() {
             <Subscribe />
 
 
-            <div className='p-3 py-5'>
+            {/* <div className='p-3 py-5'>
                 <h4 className='mb-0 p-3' style={{ backgroundColor: "var(--light-gray)" }}>Hot New Arrivals</h4>
                 <div className='row text-center g-4'>
                     {
@@ -134,7 +138,8 @@ function Page1() {
                         })
                     }
                 </div>
-            </div>
+            </div> */}
+            <HotNew />
 
             <NewSletter />
             <ContactLinks />

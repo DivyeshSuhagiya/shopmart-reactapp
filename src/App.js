@@ -61,6 +61,9 @@ function App() {
                   <Route path='/account'><Account /></Route>
                 </>
             }
+            <Route path='/*'>
+              <Redirect to='/' />
+            </Route>
           </BrowserRouter>
         </div>
       </Provider>

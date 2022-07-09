@@ -56,6 +56,7 @@ function AddProduct() {
                                     <option value='Cloth'>Cloth</option>
                                     <option value='Kitchen'>Kitchen</option>
                                     <option value='Shoes'>Shoes</option>
+                                    <option value='Watch'>Other</option>
                                     <option value='Other'>Other</option>
                                 </select>
                             </div>
