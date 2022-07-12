@@ -19,7 +19,7 @@ function HomeKitchen(props) {
       <div className='py-5 px-3'>
         <h4 className='p-3' style={{ backgroundColor: "var(--light-gray)" }}>Home & Kitchen</h4>
         <Testimonial DealOfTheDay={
-          product.slice(4,10).filter(x => x.category === "Kitchen")?.map((x, i) => {
+          product.filter(x => x.category === "Kitchen").slice(0,8)?.map((x, i) => {
             return (
               <div className='col-6 col-md-4 col-lg-3 p-0' key={i}>
                 <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id} />

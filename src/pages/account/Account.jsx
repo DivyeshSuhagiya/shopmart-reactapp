@@ -12,6 +12,7 @@ import { useCookies } from 'react-cookie'
 import { fetchProduct } from '../../redux/actions/productaction'
 import { Rating } from 'react-simple-star-rating'
 import { BiEdit } from 'react-icons/bi'
+import Swal from 'sweetalert2'
 
 function Account() {
     const [cookies, setCookie, removeCookie] = useCookies(["userId"]);
@@ -20,7 +21,7 @@ function Account() {
     const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
 
-    const productNum = product.filter(x => x.userId === cookies.userId)
+    const productNum = product?.filter(x => x.userId === cookies.userId)
 
     useEffect(() => {
         dispatch(fetchuserGetById())
@@ -29,6 +30,35 @@ function Account() {
     useEffect(() => {
         dispatch(fetchProduct())
     }, [dispatch])
+
+    function logout() {
+        Swal.fire({
+            title: 'Are You Sure??...',
+            text: "Are you sure you want to logout??",
+            icon: "success",
+            allowOutsideClick: false,
+            confirmButtonColor: '#FCB800',
+            confirmButtonText: 'Done!',
+            showCancelButton: true,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setTimeout(() => {
+                    removeCookie("userId")
+                }, 3000);
+
+
+                Swal.fire({
+                    position: 'center center',
+                    icon: 'success',
+                    title: 'Please Wait...',
+                    title: 'Logout Successfull...',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    timer: 3000
+                })
+            }
+        })
+    }
 
     return (
         <>
@@ -60,10 +90,10 @@ function Account() {
                                     <p className='bg-white p-2'>{product ? productNum.length : "---"}</p>
                                 </div>
                                 <div className='d-flex mt-5'>
-                                    <FaCog /><h6 className='ms-2'>Setting</h6>
+                                    <FaCog /><h6 className='ms-2 cursor-pointer hover-color'>Setting</h6>
                                 </div>
                                 <div className='d-flex mt-4'>
-                                    <FaSignOutAlt /><h6 className='ms-2 cursor-pointer' onClick={() => removeCookie("userId")}>LogOut</h6>
+                                    <FaSignOutAlt /><h6 className='ms-2 cursor-pointer hover-color' onClick={() => logout()}>LogOut</h6>
                                 </div>
                             </div>
                         </div>
@@ -95,27 +125,6 @@ function Account() {
                 {
                     product?.filter(x => x.userId === cookies.userId)?.map(x => {
                         return (
-                            // <div className='col-6 col-md-4 '>
-                            //     <div className='border-1'>
-                            //         <div className="card border-0 py-2 h-100">
-                            //             <div className="row g-3 h-100">
-                            //                 <div className="col-md-4 ">
-                            //                     <img src={x.productImage} className="img-fluid rounded-start" alt="..." />
-                            //                 </div>
-                            //                 <div className="col-md-8">
-                            //                     <div className="card-body text-start">
-                            //                         <p className='p-0 my-1'>{x.shopName}</p>
-                            //                         <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
-                            //                         <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
-                            //                         <span className='text-muted' style={{ fontSize: "12px" }}><del>₹{x.offerPrice}</del></span>
-                            //                         <h6 className='text-danger'>{x.discount}% off</h6>
-                            //                         <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
-                            //                     </div>
-                            //                 </div>
-                            //             </div>
-                            //         </div>
-                            //     </div>
-                            // </div>
                             <div className='row border-1 py-2'>
                                 <div className='col-12 col-md-3'>
                                     {/* <img src={x.productImage} className="img-fluid rounded-start" alt="..." style={{width:"200px" , height:"250px"}}/> */}

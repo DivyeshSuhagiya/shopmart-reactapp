@@ -37,7 +37,7 @@ function ProductComponent(props) {
         <>
             <div>
                 <div className='card product-card overflow-hidden p-2 m-1 mb-3 border-0 h-100' style={{height:'100% !important'}} onClick={handleShow}>
-                    <Badge bg="warning" className='p-2 fs-6' style={{ position: "absolute", right: "5px", top: "5px", zIndex: 99 }}>-18%</Badge>{' '}
+                    <Badge bg="warning" className='p-2 fs-6' style={{ position: "absolute", right: "5px", top: "5px", zIndex: 99 }}>-{props.discount}%</Badge>{' '}
                     {/* <Card.Img variant="top" src={props.images} className="py-0 img-fluid"/> */}
                     <div>
                         <img src={props.images} alt="" className='w-100 img-fluid' height="280px" />
@@ -50,8 +50,8 @@ function ProductComponent(props) {
                         </div>
                         <Card.Title style={{ fontSize: "14px" }}>{props.shopName}</Card.Title><hr className='my-1' />
                         <div>
-                            <span className='price pe-2 text-success fw-bold fs-6'>₹{props.price}</span>
-                            <span className='old-price text-muted pe-2' >₹{props.yourPrice}</span>
+                            <span className='price pe-2 text-success fw-bold fs-6'>₹{props.yourPrice}</span>
+                            <span className='old-price text-muted pe-2' >₹{props.price}</span>
                             <span className='discount text-danger' >{props.discount}% off</span>
                         </div>
                         <div className='product-name mb-0 mt-1' style={{overflow: "hidden" , fontSize: "14px", whiteSpace:"nowrap",textOverflow: "ellipsis" }}>
@@ -85,7 +85,7 @@ function ProductComponent(props) {
                                 <hr className='m-0' />
 
                                 <div className='mt-3'>
-                                    <h6><del className='text-muted'>₹{productObj?.offerPrice}</del><h4 className='d-inline ms-2 text-danger fw-bold'>₹{productObj?.price}</h4></h6>
+                                    <h6><del className='text-muted'>₹{productObj?.price}</del><h4 className='d-inline ms-2 text-danger fw-bold'>₹{productObj?.offerPrice}</h4></h6>
                                 </div>
                                 <div className='mt-3'>
                                     <p className='m-0 mb-2'>Sold By: <span className='text-primary fw-bold'>{productObj?.shopName}</span></p>

@@ -76,6 +76,10 @@ a{
 .cursor-pointer{
   cursor: pointer;
 }
+.hover-color:hover{
+  transition: 0.3s;
+  color: var(---main-bg);
+}
 @media screen and (max-width : 1100px) {
   .same-product-page{
       padding-left: 0px !important;

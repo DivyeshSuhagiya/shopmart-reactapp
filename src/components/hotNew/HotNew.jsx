@@ -18,7 +18,7 @@ function HotNew(props) {
         <>
             <div className='py-5'>
                 <Testimonial DealOfTheDay={
-                    product.slice(0,10).filter(x => x)?.map((x, i) => {
+                    product.slice(0,8).filter(x => x)?.map((x, i) => {
                         return (
                             <div className="card border-0 py-2" key={i}>
                                 <div className="row g-0">

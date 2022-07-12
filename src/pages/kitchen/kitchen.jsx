@@ -45,7 +45,7 @@ function Kitchen() {
                     </div>
                     <div className='col-12 col-md-9 p-0'>
                         <div className='row'>
-                            <h4>Best Sale Items</h4>
+                            <h4>Best Sale Items of Kitchen</h4>
                             <hr />
                             {
                                 kitchen.filter(x => x.category === "Kitchen")?.map((x,i) => {

@@ -48,7 +48,8 @@ export const fetchuserLogin= (value) => {
         dispatch(userRequest());
         axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/login" , value).then(response => {
             const user = response.data.userInfo
-            dispatch(userSuccess(user))
+            dispatch(userSuccess(response))
+            console.log(user)
             document.cookie = `userId=${user._id};path=/`;
         }).catch(error => {
             dispatch(userFailure(error.massage))

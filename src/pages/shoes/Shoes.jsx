@@ -48,7 +48,7 @@ function Shoes() {
                             <h4>Best Sale Items of Shoes</h4>
                             <hr />
                             {
-                                shoes.filter(x => x.category === "Mobiles")?.map((x,i) => {
+                                shoes.filter(x => x.category === "Shoes")?.map((x,i) => {
                                     return (
                                         <div className='col-6 col-md-4 col-lg-3 p-0' key={i}>
                                             <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
