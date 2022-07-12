@@ -14,6 +14,20 @@ export const fetchProduct = () => {
     }
 }
 
+export const fetchSearchProduct = (value) => {
+    return (dispatch) => {
+        dispatch(productRequest());
+        axios.get(`https://shopmart-nodeapp.herokuapp.com/api/product/search/${value?.category}`).then(response => {
+            const product = response.data.data
+            dispatch(productSuccess(product))
+            // console.log(value?.category) 
+            // console.log(product)
+        }).catch(error => {
+            dispatch(productFailure(error.massage))
+        })
+    }
+}
+
 // export const fetchProductDelete = (id) => {
 //     return (dispatch) => {
 //         let userUrl = 'https://shopmart-nodeapp.herokuapp.com/api/product/delete?id=' + id;
@@ -30,7 +44,6 @@ export const fetchProductPost = (value) => {
 
     return (dispatch) => {
         dispatch(productRequest());
-        console.log(value)
         const formData = new FormData()
         formData.append("shopName", value.shopName)
         formData.append("price", value.price)
@@ -46,7 +59,6 @@ export const fetchProductPost = (value) => {
                 const product = response.data.data
                 dispatch(productSuccess(product))
                 dispatch(fetchProduct())
-                console.log(product)
             }
             
         ).catch(error => {

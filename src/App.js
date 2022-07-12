@@ -19,9 +19,12 @@ import About from './pages/aboutus/About';
 import Contact from './pages/contacts/Contact';
 import Account from './pages/account/Account';
 import { useCookies } from 'react-cookie';
+import Search from './pages/Search';
+
 
 function App() {
   const [cookies, setCookie] = useCookies(["userId"]);
+
 
   return (
     <>
@@ -41,8 +44,9 @@ function App() {
             <Route path='/Shoes'><Shoes /></Route>
             <Route path='/About'><About /></Route>
             <Route path='/Contact'><Contact /></Route>
+            <Route path='/Search'><Search /></Route>
             {
-               cookies.userId === undefined ?
+              !cookies.userId ?
                 <>
                   <Route path='/login'><Login /></Route>
                   <Route path='/register'><Register /></Route>
@@ -61,9 +65,9 @@ function App() {
                   <Route path='/account'><Account /></Route>
                 </>
             }
-            <Route path='/*'>
+            {/* <Route path='*'>
               <Redirect to='/' />
-            </Route>
+            </Route> */}
           </BrowserRouter>
         </div>
       </Provider>

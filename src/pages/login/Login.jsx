@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Login.css'
 import { FaFacebook, FaTwitter, FaGooglePlusG } from "react-icons/fa";
 import { fetchuserLogin } from '../../redux/actions/useraction.js';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useCookies } from 'react-cookie';
 import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -14,9 +14,9 @@ function Login() {
     // const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(fetchuserLogin())
-    // }, [])
+    useEffect(() => {
+        dispatch(fetchuserLogin())
+    }, [dispatch])
 
     let obj = {  email: "" , password : "" }
     const [value, setvalue] = useState({ ...obj })
@@ -24,12 +24,11 @@ function Login() {
     const ChangeInput = (e) => {
         setvalue({ ...value, [e.target.name]: e.target.value })
     }
-
     const SaveData = () => {
         if((value.email !== "") && (value.password !== ""))
         {
             dispatch(fetchuserLogin(value));
-
+            
             Swal.fire({
                 title: 'successfull...',
                 text: "Account Login Successfully..",
@@ -39,7 +38,8 @@ function Login() {
                 confirmButtonText: 'Done!'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  window.location.reload()
+                //   window.location.reload()
+                    window.location = "/account";
                 }
               })
         }   
@@ -65,14 +65,14 @@ function Login() {
                                 <label htmlFor="exampleInputPassword1">Password</label>
                                 <input type="password" name='password' value={value.password} className="form-control" id="exampleInputPassword1" placeholder="Password" onChange={ChangeInput} />
                             </div>
-                            <NavLink to={cookies.userId && cookies.userId === undefined? "/login" :"/account"}>
                                 <button type="button" onClick={() => SaveData()} className="shopNow btn_hover mt-4">Submit</button>
-                                </NavLink>
+
+                                <p className='mt-3'>Don't have an account?<NavLink to='/register'>Sign Up</NavLink></p>
                         </form>
-                        <div className='ps-3 mt-5'>
-                            <FaFacebook className='me-3' size="30px" style={{color:"#144e6e"}}/>
-                            <FaTwitter className='me-3' size="30px" style={{color:"#0d3069"}}/>
-                            <FaGooglePlusG className='me-3' size="30px" style={{color:"#c20c0c"}}/>
+                        <div className='ps-3 mt-0'>
+                            <a target="_blank" href="https://www.facebook.com"><FaFacebook className='me-3' size="30px" style={{color:"#144e6e"}}/></a>
+                            <a target="_blank" href="https://www.twitter.com"><FaTwitter className='me-3' size="30px" style={{color:"#0d3069"}}/></a>
+                            <a target="_blank" href="https://www.google.com"><FaGooglePlusG className='me-3' size="30px" style={{color:"#c20c0c"}}/></a>
                         </div>
                     </div>
                 </div>

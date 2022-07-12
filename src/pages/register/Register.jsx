@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
+import { NavLink } from 'react-router-dom';
 
 function Register() {
     const user = useSelector(state => state.user.user)
@@ -93,6 +94,7 @@ function Register() {
                                 <input type="password" name='confirmPassword' value={value.confirmPassword} className="form-control" id="Confirm Password" placeholder="Enter Confirm Password" onChange={ChangeInput} />
                             </div>
                             <button type="button" onClick={() => SaveData()} className="shopNow btn_hover mt-4">Submit</button>
+                            <p>Have an account?<NavLink to='/login'>Sign In</NavLink></p>
                         </form>
                         <div className='ps-3 mt-4'>
                             <FaFacebook className='me-3' size="30px" style={{ color: "#144e6e" }} />

@@ -4,13 +4,14 @@ import Footer from '../../components/footer/Footer'
 import NewSletter from '../../components/newSletter/NewSletter'
 import ProductLinks from '../../components/productLinks/ProductLinks'
 import './Account.css'
-import { FaCog, FaSignOutAlt } from "react-icons/fa";
+import { FaCog, FaRegWindowClose, FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchuserGetById } from '../../redux/actions/useraction.js'
 import AddProduct from '../../components/addProduct/AddProduct'
 import { useCookies } from 'react-cookie'
 import { fetchProduct } from '../../redux/actions/productaction'
 import { Rating } from 'react-simple-star-rating'
+import { BiEdit } from 'react-icons/bi'
 
 function Account() {
     const [cookies, setCookie, removeCookie] = useCookies(["userId"]);
@@ -73,26 +74,67 @@ function Account() {
             <AddProduct />
 
 
-            <div className='row my-5 px-3'>
-                <h4 className='ms-2'>Your All Products</h4><hr />
+            <div className='row my-5 px-3 '>
+                <h4 className='ms-2 mt-4 py-2' style={{ backgroundColor: "var(--light-gray)" }}>Your All Products</h4>
+                <div className='row mt-3'>
+                    <div className='col-12 col-md-3'>
+                        <h5>Product</h5>
+                    </div>
+                    <div className='col-12 col-md-9 d-none d-md-block'>
+                        <div className='row'>
+                            <div className='col-8'>
+                                <h5>Product Details</h5>
+                            </div>
+                            <div className='col-4'>
+                                <h5>Product Action</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
                 {
                     product?.filter(x => x.userId === cookies.userId)?.map(x => {
                         return (
-                            <div className='col-6 col-md-4'>
-                                <div className="card border-1 py-2">
-                                    <div className="row g-0">
-                                        <div className="col-md-4">
-                                            <img src={x.productImage} className="img-fluid rounded-start" alt="..." />
+                            // <div className='col-6 col-md-4 '>
+                            //     <div className='border-1'>
+                            //         <div className="card border-0 py-2 h-100">
+                            //             <div className="row g-3 h-100">
+                            //                 <div className="col-md-4 ">
+                            //                     <img src={x.productImage} className="img-fluid rounded-start" alt="..." />
+                            //                 </div>
+                            //                 <div className="col-md-8">
+                            //                     <div className="card-body text-start">
+                            //                         <p className='p-0 my-1'>{x.shopName}</p>
+                            //                         <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
+                            //                         <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
+                            //                         <span className='text-muted' style={{ fontSize: "12px" }}><del>₹{x.offerPrice}</del></span>
+                            //                         <h6 className='text-danger'>{x.discount}% off</h6>
+                            //                         <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
+                            //                     </div>
+                            //                 </div>
+                            //             </div>
+                            //         </div>
+                            //     </div>
+                            // </div>
+                            <div className='row border-1 py-2'>
+                                <div className='col-12 col-md-3'>
+                                    {/* <img src={x.productImage} className="img-fluid rounded-start" alt="..." style={{width:"200px" , height:"250px"}}/> */}
+                                    <div className='account_product' style={{ backgroundImage: `url('${x.productImage}')` }}>
+                                    </div>
+                                </div>
+                                <div className='col-12 col-md-9'>
+                                    <div className='row'>
+                                        <div className='col-8'>
+                                            <p className='p-0 my-1'>{x.shopName}</p>
+                                            <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
+                                            <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
+                                            <span className='text-muted' style={{ fontSize: "12px" }}><del>₹{x.offerPrice}</del></span>
+                                            <h6 className='text-danger'>{x.discount}% off</h6>
+                                            <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
                                         </div>
-                                        <div className="col-md-8">
-                                            <div className="card-body text-start">
-                                                <p className='p-0 my-1'>{x.shopName}</p>
-                                                <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
-                                                <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
-                                                <span className='text-muted' style={{fontSize:"12px"}}><del>₹{x.offerPrice}</del></span>
-                                                <h6 className='text-danger'>{x.discount}% off</h6>
-                                                <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
-                                            </div>
+                                        <div className='col-4'>
+                                            <BiEdit className='text-success p-1 mx-2 cursor-pointer ' size={45} style={{ borderRadius: "3px" }} />
+                                            <FaRegWindowClose className='text-danger p-1 mx-2' size={43} style={{ borderRadius: "3px" }} />
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +142,6 @@ function Account() {
                         )
                     })
                 }
-
             </div>
 
             <NewSletter />
