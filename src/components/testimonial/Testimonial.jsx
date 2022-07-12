@@ -43,6 +43,7 @@ function Testimonial(props) {
             <Slider {...settings} className='py-3'>
                 {props.DealOfTheDay}
                 {props.CustomerElectronic}
+                {props.MonthCategoies}
             </Slider>
         </>
     )

@@ -85,7 +85,7 @@ function Page1() {
                 <div className='row text-center g-4'>
 
                     <Testimonial
-                        aa={
+                        MonthCategoies={
                             imageObj.map((x,i) => {
                                 return (
                                     <div className=' monthCate col-6 col-lg-2 col-md-3' >
