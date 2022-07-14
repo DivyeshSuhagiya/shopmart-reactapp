@@ -5,7 +5,7 @@ import './HeaderBottom.css'
 function HeaderBottom() {
   return (
     <>
-        <div className='header-bottom px-3 py-1 sticky-top'>
+        <div className='header-bottom px-3 py-1' style={{zIndex:100}}>
             <div className=''>
                 <div className='row justify-content-between'>
                     <div className='col-4 col-lg-2 p-0 d-flex align-items-center'>
@@ -28,8 +28,8 @@ function HeaderBottom() {
                     </div>
                     <div className='sell col-lg-3'>
                             <div className='d-flex justify-content-end'>
-                                <span>Sell on Shopmart</span>
-                                <span>Tract your order</span>
+                                <NavLink to='/account'><span>Sell on Shopmart</span></NavLink>
+                                <NavLink to='/account'><span>Tract your order</span></NavLink>
                             </div>
                     </div>
                 </div>

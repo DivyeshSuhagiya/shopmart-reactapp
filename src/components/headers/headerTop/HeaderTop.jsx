@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import './HeaderTop.css'
 import { BiMenu } from "react-icons/bi";
 import { Offcanvas } from 'react-bootstrap';
@@ -21,40 +21,35 @@ function HeaderTop() {
     const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
     
-
     useEffect(() => {
         dispatch(fetchSearchProduct())
     }, [])
     const history = useHistory()
 
-    let obj = {  category : ""}
+    let obj = {  category : ""} 
     const [value, setvalue] = useState({ ...obj })
-
     const ChangeInput = (e) => {
         setvalue({ ...value, [e.target.name]: e.target.value })
-        setTimeout(() => {
-            dispatch(fetchSearchProduct(value))
-          }, 2000);
+        // setTimeout(() => {
+        //     dispatch(fetchSearchProduct(value))
+        //   }, 2000);
           dispatch(fetchSearchProduct(value))
+
           if(value.category.length <= 1){
             history.push(`/`)
           }
           else{
             history.push(`/Search`)
           }
-          
-          
-        
     }
     const SaveData = () => {
         dispatch(fetchSearchProduct(value))
         setvalue({ ...obj })
     }
-
+    // console.log(product)
 
     return (
         <>
-
             <div className='header-top px-3 py-1'>
                 <div className="">
                     <div className='row'>

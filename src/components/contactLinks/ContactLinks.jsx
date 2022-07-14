@@ -12,10 +12,10 @@ function ContactLinks() {
                         <h4 className='my-2 fw-bold' style={{ color: "#FCB800" }}>1800 97 97 69</h4>
                         <p>502 New Design Str, Melbourne, Australia contact@martfury.co</p>
                         <div className='mt-4'>
-                            <i class='bx bxl-facebook bx-sm pe-2' style={{ color: '#2a3b96' }}  ></i>
-                            <i class='bx bxl-twitter bx-sm pe-2' style={{ color: '#3e93de' }}  ></i>
-                            <i class='bx bxl-google-plus bx-sm pe-2' style={{ color: '#e41717' }}  ></i>
-                            <i class='bx bxl-instagram bx-sm pe-2' style={{ color: '#e41780' }}  ></i>
+                            <i className='bx bxl-facebook bx-sm pe-2' style={{ color: '#2a3b96' }}  ></i>
+                            <i className='bx bxl-twitter bx-sm pe-2' style={{ color: '#3e93de' }}  ></i>
+                            <i className='bx bxl-google-plus bx-sm pe-2' style={{ color: '#e41717' }}  ></i>
+                            <i className='bx bxl-instagram bx-sm pe-2' style={{ color: '#e41780' }}  ></i>
                         </div>
                     </div>
                     <div className='col-4 col-md-2 mb-5'>

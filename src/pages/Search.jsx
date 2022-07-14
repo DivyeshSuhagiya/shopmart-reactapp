@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSearchProduct } from '../redux/actions/productaction';
+import { fetchProduct, fetchSearchProduct } from '../redux/actions/productaction';
 import { useParams } from 'react-router-dom';
 import ProductComponent from '../components/productComponent/ProductComponent';
 import { useMemo } from 'react';
@@ -17,19 +17,23 @@ function Search() {
     useEffect(() => {
         dispatch(fetchSearchProduct())
     }, [])
+    // useEffect(()=> {
+    //     dispatch(fetchProduct())
+    // } , [dispatch])
     
-    // useMemo(() => dispatch(fetchSearchProduct()) , [product])
+    // useMemo(() => dispatch(fetchProduct()) , [])
+    // console.log(product);
     return (
         <>
         
             <div className='row'>
-                {product.map(x => {
+                {/* {product.map(x => {
                     return (
                         <div className='col-6 col-md-4 col-lg-3'>
                             <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
                         </div> 
                     )
-                })}
+                })} */}
                 
             </div>
 

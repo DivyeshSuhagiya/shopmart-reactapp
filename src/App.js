@@ -20,6 +20,7 @@ import Contact from './pages/contacts/Contact';
 import Account from './pages/account/Account';
 import { useCookies } from 'react-cookie';
 import Search from './pages/Search';
+import Page404 from './pages/Page404/Page404';
 
 
 function App() {
@@ -65,9 +66,7 @@ function App() {
                   <Route path='/account'><Account /></Route>
                 </>
             }
-            {/* <Route path='*'>
-              <Redirect to='/' />
-            </Route> */}
+            <Route path='*'><Page404 /></Route>
           </BrowserRouter>
         </div>
       </Provider>

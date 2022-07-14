@@ -43,7 +43,7 @@ function ProductComponent(props) {
                         <img src={props.images} alt="" className='w-100 img-fluid' height="280px" />
                     </div>
                     <Card.Body className="mt-3 pt-0 card-body per position-relative" style={{ zIndex: "200" }}>
-                        <div class="child  w-100 text-muted  py-1 position-absolute text-center" style={{ height: "35px" }}>
+                        <div className="child  w-100 text-muted  py-1 position-absolute text-center" style={{ height: "35px" }}>
                             <FaRegHeart className='product-icon mx-1' />
                             <FaShopify className='product-icon mx-1' />
                             <BsEye className="product-icon mx-1" style={{ cursor: "pointer" }} onClick={handleShow} />
@@ -102,13 +102,13 @@ function ProductComponent(props) {
                                     <p>Quantity</p>
                                     <div>
                                         <div className='d-inline-block me-2'>
-                                            <div class="input-group mb-3 border-1" style={{ width: "100px" }} >
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text cursor-pointer">-</span>
+                                            <div className="input-group mb-3 border-1" style={{ width: "100px" }} >
+                                                <div className="input-group-prepend">
+                                                    <span className="input-group-text cursor-pointer">-</span>
                                                 </div>
                                                 <input type="text" className="border-0 form-control" aria-label="Amount (to the nearest dollar)" value="1" />
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text cursor-pointer">+</span>
+                                                <div className="input-group-append">
+                                                    <span className="input-group-text cursor-pointer">+</span>
                                                 </div>
                                             </div>
                                         </div>

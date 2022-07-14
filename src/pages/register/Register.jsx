@@ -11,10 +11,11 @@ import { NavLink } from 'react-router-dom';
 function Register() {
     const user = useSelector(state => state.user.user)
     const dispatch = useDispatch()
+    const [count, setcount] = useState()
 
-    useEffect(() => {
-        dispatch(fetchuser())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(fetchuser())
+    // }, [])
 
     let obj = { userName: "", email: "", mobile: "", password: "", confirmPassword: "", accountActivationCode: "" }
     const [value, setvalue] = useState({ ...obj })
@@ -27,39 +28,87 @@ function Register() {
     const SaveData = () => {
         if ((value.userName !== "") && (value.email !== "") && (value.mobile !== "") && (value.password !== "") && (value.confirmPassword !== "")) {
             dispatch(fetchuserRegister(value))
-            document.getElementsByClassName('register-main')[0].style.display = "none"
-            document.getElementsByClassName('otp')[0].style.display = "block"
             setemailotp(value.email)
-        }
-        setvalue({ ...obj })
-    }
-    const SaveOtp = () => {
-        if ((value.accountActivationCode !== "")) {
-            dispatch(fetchuserActivationCode(emailotp, value))
-            document.getElementsByClassName('otp')[0].style.display = "none"
-
             let timerInterval
             Swal.fire({
-                title: 'Auto close alert!',
-                html: 'I will close in <b></b> milliseconds.',
-                timer: 2000,
+                title: 'Please Wait....',
+                html: 'Connecting With Database and check user Details..',
+                timer: 5000,
                 timerProgressBar: true,
                 didOpen: () => {
                     Swal.showLoading()
                     const b = Swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft()
-                    }, 100)
                 },
                 willClose: () => {
                     clearInterval(timerInterval)
                 }
             }).then((result) => {
-                /* Read more about handling dismissals below */
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    console.log('I was closed by the timer')
                 }
+                setcount(1)
             })
+        }
+        else {
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Fill Form.....',
+                text: 'Enter All Field',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+        setvalue({ ...obj })
+    }
+    console.log(user);
+
+    useEffect(() => {
+        if (count === 1) {
+            dispatch(fetchuser())
+        }
+    }, [])
+    const isSuccess = user?.data?.isSuccess;
+    if (count === 1) {
+        if (isSuccess === false) {
+            Swal.fire({
+                icon: 'info',
+                title: 'Please Try Again..',
+                text: `${user?.data?.message}`,
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                timer: 4000
+            })
+            setcount()
+        }
+        else {
+            Swal.fire({
+                icon: 'success',
+                title: 'successfull...',
+                text: 'Thank You.. Mail is Send Please enter OTP',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                timer: 3000
+            })
+            setcount()
+            document.getElementsByClassName('register-main')[0].style.display = "none"
+            document.getElementsByClassName('otp')[0].style.display = "block"
+        }
+    }
+    const SaveOtp = () => {
+        if ((value.accountActivationCode !== "")) {
+            dispatch(fetchuserActivationCode(emailotp, value))
+            document.getElementsByClassName('otp')[0].style.display = "none"
+            Swal.fire({
+                icon: 'success',
+                title: 'successfull...',
+                text: 'Thank You.. Account Activated..',
+                allowOutsideClick: false,
+                showConfirmButton: false,
+                timer: 4000
+            })
+            setTimeout(() => {
+                window.location = "/";
+            }, 4000);
         }
         setvalue({ ...obj })
     }

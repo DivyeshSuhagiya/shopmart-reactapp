@@ -136,8 +136,8 @@ function Account() {
                                         <div className='col-8'>
                                             <p className='p-0 my-1'>{x.shopName}</p>
                                             <p className='p-0 m-0 product-name' style={{ fontSize: "14px" }}>{x.productName}</p>
-                                            <h6 className='m-0 p-0 text-success'>₹{x.price}</h6>
-                                            <span className='text-muted' style={{ fontSize: "12px" }}><del>₹{x.offerPrice}</del></span>
+                                            <h6 className='m-0 p-0 text-success'>₹{x.offerPrice}</h6>
+                                            <span className='text-muted' style={{ fontSize: "12px" }}><del>₹{x.price}</del></span>
                                             <h6 className='text-danger'>{x.discount}% off</h6>
                                             <Rating className="pb-2 " readonly="true" size='20' initialValue="0" allowHalfIcon="true" allowHover="false" ratingValue={70} />
                                         </div>

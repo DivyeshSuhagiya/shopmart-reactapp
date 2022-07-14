@@ -11,9 +11,9 @@ function NewSletter() {
                         <p>Subcribe to get information about products and coupons</p>
                     </div>
                     <div className='col-12 col-md-7'>
-                        <div class="input-group border-1">
-                            <input type="text" class="form-control px-3 py-2" placeholder="Email address"/>
-                            <span class="input-group-text fw-bold btn_hover px-3" style={{ backgroundColor: "#FCB800", cursor: "pointer" }}>Subscribe</span>
+                        <div className="input-group border-1">
+                            <input type="text" className="form-control px-3 py-2" placeholder="Email address"/>
+                            <span className="input-group-text fw-bold btn_hover px-3" style={{ backgroundColor: "#FCB800", cursor: "pointer" }}>Subscribe</span>
                         </div>
                     </div>
                 </div>

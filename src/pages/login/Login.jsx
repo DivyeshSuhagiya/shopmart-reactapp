@@ -36,9 +36,9 @@ function Login() {
                 didOpen: () => {
                     Swal.showLoading()
                     const b = Swal.getHtmlContainer().querySelector('b')
-                    timerInterval = setInterval(() => {
-                        b.textContent = Swal.getTimerLeft()
-                    }, 100)
+                    // timerInterval = setInterval(() => {
+                    //     b.textContent = Swal.getTimerLeft()
+                    // }, 100)
                 },
                 willClose: () => {
                     clearInterval(timerInterval)
@@ -74,7 +74,7 @@ function Login() {
             Swal.fire({
                 icon: 'info',
                 title: 'Please Try Again..',
-                title: 'UserName and password wrong!!!',
+                text: 'UserName and password wrong!!!',
                 allowOutsideClick: false,
                 showConfirmButton: false,
                 timer: 3000
@@ -82,20 +82,29 @@ function Login() {
             setcount()
         }
         else {
+            // Swal.fire({
+            //     title: 'successfull... ',
+            //     text: "Account Login Successfully.. Please Wait 3 Second",
+            //     icon: "success",
+            //     allowOutsideClick: false,
+            //     confirmButtonColor: '#FCB800',
+            //     confirmButtonText: 'Done!'
+            // }).then((result) => {
+            //     if (result.isConfirmed) {
+                    
+            //     }
+            // })
             Swal.fire({
-                title: 'successfull... ',
-                text: "Account Login Successfully.. Please Wait 3 Second",
-                icon: "success",
+                icon: 'success',
+                title: 'successfull...',
+                text: 'Account Login Successfully.. Please Wait 3 Second',
                 allowOutsideClick: false,
-                confirmButtonColor: '#FCB800',
-                confirmButtonText: 'Done!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    setTimeout(() => {
-                        window.location = "/account";
-                    }, 3000);
-                }
+                showConfirmButton: false,
+                timer: 3000
             })
+            setTimeout(() => {
+                window.location = "/account";
+            }, 3000);
             setcount()
         }
     }

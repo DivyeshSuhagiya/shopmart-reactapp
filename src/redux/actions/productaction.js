@@ -20,8 +20,7 @@ export const fetchSearchProduct = (value) => {
         axios.get(`https://shopmart-nodeapp.herokuapp.com/api/product/search/${value?.category}`).then(response => {
             const product = response.data.data
             dispatch(productSuccess(product))
-            // console.log(value?.category) 
-            // console.log(product)
+            console.log(product)
         }).catch(error => {
             dispatch(productFailure(error.massage))
         })

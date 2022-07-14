@@ -34,7 +34,7 @@ export const fetchuserRegister = (value) => {
 
         axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/register" , value).then(response => {
             const user = response.data.data
-            dispatch(userSuccess(user))
+            dispatch(userSuccess(response))
         }).catch(error => {
             dispatch(userFailure(error.massage))
         })
@@ -49,7 +49,6 @@ export const fetchuserLogin= (value) => {
         axios.post("https://shopmart-nodeapp.herokuapp.com/api/user/login" , value).then(response => {
             const user = response.data.userInfo
             dispatch(userSuccess(response))
-            console.log(user)
             document.cookie = `userId=${user._id};path=/`;
         }).catch(error => {
             dispatch(userFailure(error.massage))
