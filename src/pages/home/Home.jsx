@@ -49,6 +49,7 @@ function Page1() {
     ]
 
     const slideImages = [
+        
         {
             url: slide1,
             caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
