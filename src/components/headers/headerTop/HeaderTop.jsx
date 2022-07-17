@@ -2,11 +2,12 @@ import React, { useMemo, useState } from 'react'
 import './HeaderTop.css'
 import { BiMenu } from "react-icons/bi";
 import { Offcanvas } from 'react-bootstrap';
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink, useHistory, useLocation } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
 import { fetchSearchProduct } from '../../../redux/actions/productaction';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 
 
 
@@ -20,27 +21,26 @@ function HeaderTop() {
 
     const product = useSelector(state => state.product.product)
     const dispatch = useDispatch()
-    
+
     useEffect(() => {
         dispatch(fetchSearchProduct())
     }, [])
     const history = useHistory()
-
-    let obj = {  category : ""} 
+    const location = useLocation();
+    let obj = { category: "" }
     const [value, setvalue] = useState({ ...obj })
     const ChangeInput = (e) => {
         setvalue({ ...value, [e.target.name]: e.target.value })
         // setTimeout(() => {
-        //     dispatch(fetchSearchProduct(value))
+        //     dispatch(fetchSea)rchProduct(value))
         //   }, 2000);
-          dispatch(fetchSearchProduct(value))
-
-          if(value.category.length <= 1){
+        dispatch(fetchSearchProduct({ category: e.target.value }))
+        if (e.target.value < 1) {
             history.push(`/`)
-          }
-          else{
+        }
+        else if (location.pathname !== '/Search') {
             history.push(`/Search`)
-          }
+        }
     }
     const SaveData = () => {
         dispatch(fetchSearchProduct(value))
@@ -57,7 +57,7 @@ function HeaderTop() {
                         <div className='col-12 col-sm-8 col-lg-7 p-0 d-none d-sm-block'>
                             <div className='header-search'>
                                 <div className="search-group mb-3">
-                                    <input type="text" name='category' value={value.category} placeholder="I'm a shopping for.." onChange={ChangeInput}/>
+                                    <input type="text" name='category' value={value.category} placeholder="I'm a shopping for.." onChange={ChangeInput} />
                                     <div className="search-group-append" onClick={() => SaveData()} >
                                         {/* <i className='bx bx-search-alt-2 bx-sm' style={{ color: "white" }}  ></i> */}
                                         Search
@@ -107,7 +107,7 @@ function HeaderTop() {
                             </form>
                         </div>
                         <div className='col-2 d-block d-sm-none text-end m-0 p-0'>
-                            <NavLink to='/account' style={{color:"black"}}><i className='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
+                            <NavLink to='/account' style={{ color: "black" }}><i className='bx bx-user bx-md' data-bs-toggle="tooltip" data-bs-placement="bottom" title="Account"></i></NavLink>
                         </div>
                     </div>
                 </div>

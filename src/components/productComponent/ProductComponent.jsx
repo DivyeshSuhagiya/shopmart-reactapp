@@ -24,8 +24,8 @@ function ProductComponent(props) {
     const dispatch = useDispatch()
     
     useEffect(() => {
-        dispatch(fetchProduct())
-    }, [dispatch])
+        // dispatch(fetchProduct())
+    }, [])
 
     const handleRating = (rate) => {
         setRating(rate)

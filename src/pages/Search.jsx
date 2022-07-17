@@ -15,11 +15,12 @@ function Search() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchSearchProduct())
+        debugger
+        // dispatch(fetchSearchProduct())
     }, [])
     // useEffect(()=> {
     //     dispatch(fetchProduct())
-    // } , [dispatch])
+    // } , [])
     
     // useMemo(() => dispatch(fetchProduct()) , [])
     // console.log(product);
@@ -27,13 +28,13 @@ function Search() {
         <>
         
             <div className='row'>
-                {/* {product.map(x => {
+                {product.map(x => {
                     return (
                         <div className='col-6 col-md-4 col-lg-3'>
                             <ProductComponent images={x.productImage} shopName={x.shopName} price={x.price} yourPrice={x.offerPrice} discount={x.discount} productName={x.productName} id={x._id}/>
                         </div> 
                     )
-                })} */}
+                })}
                 
             </div>
 

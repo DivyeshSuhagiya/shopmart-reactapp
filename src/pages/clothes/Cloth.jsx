@@ -18,8 +18,8 @@ function Cloth() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchProduct())
-    }, [dispatch])
+        // dispatch(fetchProduct())
+    }, [])
 
     const slideImages = [
         {

@@ -10,8 +10,8 @@ function HotNew(props) {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchProduct())
-    }, [dispatch])
+        // dispatch(fetchProduct())
+    }, [])
     
 
     return (

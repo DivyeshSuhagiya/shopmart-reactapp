@@ -10,8 +10,8 @@ function AddProduct() {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(fetchProduct())
-    }, [dispatch])
+        // dispatch(fetchProduct())
+    }, [])
 
     let obj = { shopName: "", price: "", offerPrice: "", productImage: "", discount: "", productName: "" , category : "" , userId : cookies.userId}
     const [value, setvalue] = useState({ ...obj })

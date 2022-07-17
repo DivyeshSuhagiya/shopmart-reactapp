@@ -25,11 +25,11 @@ function Account() {
 
     useEffect(() => {
         dispatch(fetchuserGetById())
-    }, [dispatch])
+    }, [])
 
     useEffect(() => {
-        dispatch(fetchProduct())
-    }, [dispatch])
+        // dispatch(fetchProduct())
+    }, [])
 
     function logout() {
         Swal.fire({

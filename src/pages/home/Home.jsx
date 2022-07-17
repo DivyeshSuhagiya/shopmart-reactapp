@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Slider from '../../components/sliders/Slider'
 import SliderMenu from '../../components/sliderMenu/SliderMenu'
 import Services from '../../components/services/Services'
@@ -29,10 +29,14 @@ import slide1 from '../../assets/images/slide-1.jpg'
 import slide2 from '../../assets/images/slide-2.jpg'
 import slide3 from '../../assets/images/slide-3.jpg'
 import HomeKitchen from '../../components/home kithcen/HomeKitchen'
+import { useDispatch } from 'react-redux'
+import { fetchProduct } from '../../redux/actions/productaction'
 function Page1() {
 
-    
-
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchProduct())
+    }, [])
     const imageObj = [
         { image: cateImg1, name: "Electronics" },
         { image: cateImg2, name: "Clothings" },
@@ -46,27 +50,27 @@ function Page1() {
 
     const slideImages = [
         {
-          url: slide1,
-          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+            url: slide1,
+            caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
         },
         {
-          url: slide2,
-          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+            url: slide2,
+            caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
         },
         {
-          url: slide3,
-          caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
+            url: slide3,
+            caption: 'SCADINAVIAN COLLECTION FOR YOUR BEDROOM JUST'
         },
-      ];
+    ];
     return (
         <>
             <div className='mySlider'>
                 <div className='row p-3'>
                     <div className='col-12 col-lg-3 p-0 d-none d-lg-block' >
-                        <SliderMenu/>
+                        <SliderMenu />
                     </div>
                     <div className='col-12 col-lg-9 p-0'>
-                        <Slider slideImages={slideImages}/>
+                        <Slider slideImages={slideImages} />
                     </div>
                 </div>
             </div>
@@ -75,7 +79,7 @@ function Page1() {
             <Services />
 
             <DealOfTheDay />
-            
+
 
             <Page1Offer />
 
@@ -86,7 +90,7 @@ function Page1() {
 
                     <Testimonial
                         MonthCategoies={
-                            imageObj.map((x,i) => {
+                            imageObj.map((x, i) => {
                                 return (
                                     <div className=' monthCate col-6 col-lg-2 col-md-3' >
                                         <div className='border-1 m-2 p-3' key={i}>
